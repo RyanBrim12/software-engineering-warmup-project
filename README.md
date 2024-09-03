@@ -6,10 +6,10 @@ Fields:
 
 Query Language: 
 - >To initialize the language
-- >Title , director, writer, duration, release date, rating, genre 
+- Example: > Title , > director,> writer, > duration,> release date, > rating,> genre 
 - == Equality 
 - <Less than
-- Greater than
+- <Greater than
 - “”  around multiple words 
 - Key words:
 - of , specific to attribute 
