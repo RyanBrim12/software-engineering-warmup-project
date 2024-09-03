@@ -5,7 +5,7 @@ Fields:
 1 Optional Field:  Written By (Some have Null Spots) 
 
 Query Language: 
-- >To initialize the language
+- Use ">" To initialize the language
 - Example: > Title , > director,> writer, > duration,> release date, > rating,> genre 
 - == Equality 
 - <Less than
