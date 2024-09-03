@@ -5,11 +5,11 @@ Fields:
 1 Optional Field:  Written By (Some have Null Spots) 
 
 Query Language: 
-- > To initialize the language
-- >  Title , director, writer, duration, release date, rating, genre 
+- >To initialize the language
+- >Title , director, writer, duration, release date, rating, genre 
 - == Equality 
-- < Less than
-- > Greater than
+- <Less than
+- Greater than
 - “”  around multiple words 
 - Key words:
 - of , specific to attribute 
