@@ -1,43 +1,33 @@
 ID,Title,Release Date,Rating,Directed by,Written by,Duration,Genres
-35,Ratatouille,39262,8.6,"Brad Bird, 
-    
-      Jan Pinkava","Brad Bird, Jan Pinkava, Jim Capobianco, Emily Cook, Kathy Greenberg, Bob Peterson",1 h 51 m,"Animation,Adventure,Comedy,Family,Fantasy"
-59,Pulp Fiction,34621,8.9,Quentin Tarantino,"Quentin Tarantino, Roger Avary",2 h 34 m,"Crime,Drama"
-5478,Tenet,44077,7.4,Christopher Nolan,Christopher Nolan,2 h 30 m,"Action,Sci-Fi,Thriller"
-275,Oppenheimer,45128,8.5,Christopher Nolan,"Christopher Nolan, Kai Bird, Martin Sherwin",3 h,"Biography,Drama,History"
-3529,Inception,40375,8.8,Christopher Nolan,Christopher Nolan,2 h 28 m,"Action,Adventure,Sci-Fi,Thriller"
-3650,Interstellar,41948,8.8,Christopher Nolan,"Jonathan Nolan, Christopher Nolan",2 h 49 m,"Adventure,Drama,Sci-Fi"
-5577,Kill Bill: Vol. 1,37904,8.8,Quentin Tarantino,"Quentin Tarantino, Uma Thurman",1 h 51 m,"Action,Crime,Thriller"
-1567,Django Unchained,41268,8.6,Quentin Tarantino,Quentin Tarantino,2 h 45 m,"Comedy,Drama,Western"
-1588,Reservoir Dogs,33878,8.6,Quentin Tarantino,"Quentin Tarantino, Roger Avary",1 h 39 m,"Crime,Thriller"
-175,Goodfellas,33117,8.7,Martin Scorsese,"Nicholas Pileggi, Martin Scorsese",2 h 26 m,"Biography,Crime,Drama"
-7908,Shutter Island,40228,8.7,Martin Scorsese,"Laeta Kalogridis, Dennis Lehane",2 h 18 m,"Drama,Mystery,Thriller"
-308,Killers of the Flower Moon,45219,7.6,Martin Scorsese,"Eric Roth, Martin Scorsese, David Grann",3 h 26 m,"Crime,Drama,History,Mystery,Romance,Western"
-235,Saving Private Ryan,36000,8.8,Steven Spielberg,Robert Rodat,2 h 49 m,"Drama,War"
-5982,Jurassic Park,34131,8.8,Steven Spielberg,"Michael Crichton, David Koepp",2 h 7 m,"Action,Adventure,Sci-Fi,Thriller"
-484,Jaws,27565,8.5,Steven Spielberg,"Peter Benchley, Carl Gottlieb",2 h 4 m,"Adventure,Drama,Thriller"
-7012,Indiana Jones and the Kingdom of the Crystal Skull,39590,5.8,Steven Spielberg,"David Koepp, George Lucas, Jeff Nathanson, Philip Kaufman",2 h 2 m,"Action,Adventure"
-2238,Full Metal Jacket,31954,7.4,Stanley Kubrick,"Stanley Kubrick, Michael Herr, Gustav Hasford",1 h 56 m,"Drama,War"
-2506,A Clockwork Orange,26287,7.3,Stanley Kubrick,"Stanley Kubrick, Anthony Burgess",2 h 16 m,"Crime,Sci-Fi"
-5466,Eyes Wide Shut,36357,5.9,Stanley Kubrick,"Stanley Kubrick, Frederic Raphael, Arthur Schnitzler",2 h 39 m,"Drama,Mystery,Thriller"
-3019,Bobby Fischer Against the World,40795,8.5,Liz Garbus,,1 h 33 m,"Documentary,Biography,History,Sport"
-177,The Look of Silence,42202,8.3,Joshua Oppenheimer,,1 h 43 m,"Documentary,Biography,History"
-432,Apollo 11,43525,8.1,Todd Douglas Miller,,1 h 33 m,"Documentary,History"
-7776,Biggie and Tupac,37526,7.3,Nick Broomfield,,1 h 48 m,"Documentary,Biography,Crime,Music"
-9735,Katy Perry: Part of Me,41095,7.3,"Dan Cutforth, 
-    
-      Jane Lipsitz",,1 h 33 m,"Documentary,Biography,Music"
-6805,Mickey: The Story of a Mouse,44883,7,Jeff Malmberg,,1 h 29 m,"Documentary,Biography"
-9079,Cocaine Cowboys,39017,6.8,Billy Corben,,1 h 58 m,"Documentary,Crime,History"
-1231,Taylor Swift: The Eras Tour,45212,6.6,Sam Wrench,,2 h 40 m,"Documentary,Music"
-3972,Bill Nye: Science Guy,43035,6.6,"David Alvarado, 
-    
-      Jason Sussberg",,1 h 41 m,Documentary
-2305,Roadrunner: A Film About Anthony Bourdain,44393,6.3,Morgan Neville,,1 h 58 m,Documentary
-5793,Miracle,38023,7.6,Gavin O'Connor,Eric Guggenheim,2 h 15 m,"Biography,Drama,History,Sport"
-4667,22 Jump Street,41803,8,"Phil Lord, 
-    
-      Christopher Miller","Michael Bacall, Oren Uziel, Rodney Rothman, Jonah Hill",1 h 52 m,"Action,Comedy,Crime"
-5543,21 Jump Street,40984,7.9,"Phil Lord, 
-    
-      Christopher Miller","Michael Bacall, Jonah Hill, Patrick Hasburgh, Stephen J. Cannell",1 h 49 m,"Action,Comedy,Crime"
+35,Ratatouille,29-Jun-07,8.6,"Brad Bird, Jan Pinkava","Brad Bird, Jan Pinkava, Jim Capobianco, Emily Cook, Kathy Greenberg, Bob Peterson",1 h 51 m,"Animation,Adventure,Comedy,Family,Fantasy"
+59,Pulp Fiction,14-Oct-94,8.9,Quentin Tarantino,"Quentin Tarantino, Roger Avary",2 h 34 m,"Crime,Drama"
+5478,Tenet,3-Sep-20,7.4,Christopher Nolan,Christopher Nolan,2 h 30 m,"Action,Sci-Fi,Thriller"
+275,Oppenheimer,21-Jul-23,8.5,Christopher Nolan,"Christopher Nolan, Kai Bird, Martin Sherwin",3 h,"Biography,Drama,History"
+3529,Inception,16-Jul-10,8.8,Christopher Nolan,Christopher Nolan,2 h 28 m,"Action,Adventure,Sci-Fi,Thriller"
+3650,Interstellar,5-Nov-14,8.8,Christopher Nolan,"Jonathan Nolan, Christopher Nolan",2 h 49 m,"Adventure,Drama,Sci-Fi"
+5577,Kill Bill: Vol. 1,10-Oct-03,8.8,Quentin Tarantino,"Quentin Tarantino, Uma Thurman",1 h 51 m,"Action,Crime,Thriller"
+1567,Django Unchained,25-Dec-12,8.6,Quentin Tarantino,Quentin Tarantino,2 h 45 m,"Comedy,Drama,Western"
+1588,Reservoir Dogs,1-Oct-92,8.6,Quentin Tarantino,"Quentin Tarantino, Roger Avary",1 h 39 m,"Crime,Thriller"
+175,Goodfellas,1-Sep-90,8.7,Martin Scorsese,"Nicholas Pileggi, Martin Scorsese",2 h 26 m,"Biography,Crime,Drama"
+7908,Shutter Island,19-Feb-10,8.7,Martin Scorsese,"Laeta Kalogridis, Dennis Lehane",2 h 18 m,"Drama,Mystery,Thriller"
+308,Killers of the Flower Moon,20-Oct-23,7.6,Martin Scorsese,"Eric Roth, Martin Scorsese, David Grann",3 h 26 m,"Crime,Drama,History,Mystery,Romance,Western"
+235,Saving Private Ryan,24-Jul-98,8.8,Steven Spielberg,Robert Rodat,2 h 49 m,"Drama,War"
+5982,Jurassic Park,11-Jun-93,8.8,Steven Spielberg,"Michael Crichton, David Koepp",2 h 7 m,"Action,Adventure,Sci-Fi,Thriller"
+484,Jaws,20-Jun-75,8.5,Steven Spielberg,"Peter Benchley, Carl Gottlieb",2 h 4 m,"Adventure,Drama,Thriller"
+7012,Indiana Jones and the Kingdom of the Crystal Skull,22-May-08,5.8,Steven Spielberg,"David Koepp, George Lucas, Jeff Nathanson, Philip Kaufman",2 h 2 m,"Action,Adventure"
+2238,Full Metal Jacket,26-Jun-87,7.4,Stanley Kubrick,"Stanley Kubrick, Michael Herr, Gustav Hasford",1 h 56 m,"Drama,War"
+2506,A Clockwork Orange,20-Dec-71,7.3,Stanley Kubrick,"Stanley Kubrick, Anthony Burgess",2 h 16 m,"Crime,Sci-Fi"
+5466,Eyes Wide Shut,16-Jul-99,5.9,Stanley Kubrick,"Stanley Kubrick, Frederic Raphael, Arthur Schnitzler",2 h 39 m,"Drama,Mystery,Thriller"
+3019,Bobby Fischer Against the World,9-Sep-11,8.5,Liz Garbus,,1 h 33 m,"Documentary,Biography,History,Sport"
+177,The Look of Silence,17-Jul-15,8.3,Joshua Oppenheimer,,1 h 43 m,"Documentary,Biography,History"
+432,Apollo 11,1-Mar-19,8.1,Todd Douglas Miller,,1 h 33 m,"Documentary,History"
+7776,Biggie and Tupac,27-Sep-02,7.3,Nick Broomfield,,1 h 48 m,"Documentary,Biography,Crime,Music"
+9735,Katy Perry: Part of Me,5-Jul-12,7.3,"Dan Cutforth, Jane Lipsitz",,1 h 33 m,"Documentary,Biography,Music"
+6805,Mickey: The Story of a Mouse,18-Nov-22,7,Jeff Malmberg,,1 h 29 m,"Documentary,Biography"
+9079,Cocaine Cowboys,27-Oct-06,6.8,Billy Corben,,1 h 58 m,"Documentary,Crime,History"
+1231,Taylor Swift: The Eras Tour,13-Oct-23,6.6,Sam Wrench,,2 h 40 m,"Documentary,Music"
+3972,Bill Nye: Science Guy,27-Oct-17,6.6,"David Alvarado, Jason Sussberg",,1 h 41 m,Documentary
+2305,Roadrunner: A Film About Anthony Bourdain,16-Jul-21,6.3,Morgan Neville,,1 h 58 m,Documentary
+5793,Miracle,6-Feb-04,7.6,Gavin O'Connor,Eric Guggenheim,2 h 15 m,"Biography,Drama,History,Sport"
+4667,22 Jump Street,13-Jun-14,8,"Phil Lord, Christopher Miller","Michael Bacall, Oren Uziel, Rodney Rothman, Jonah Hill",1 h 52 m,"Action,Comedy,Crime"
+5543,21 Jump Street,16-Mar-12,7.9,"Phil Lord, Christopher Miller","Michael Bacall, Jonah Hill, Patrick Hasburgh, Stephen J. Cannell",1 h 49 m,"Action,Comedy,Crime"
