@@ -6,7 +6,7 @@ Fields:
 
 Query Language: 
 - Use ">" To initialize the language
-- Example: > Title , > director,> writer, > duration,> release date, > rating,> genre 
+- Example: > title , > director,> writer, > duration,> release date, > rating,> genre 
 - == Equality 
 - <Less than
 - <Greater than
@@ -15,4 +15,19 @@ Query Language:
 - of , specific to attribute 
 - and 
 - or 
-- not 
+- not
+
+  Goals:
+  
+•	Discuss meeting times and workflow
+•	Discuss Project Topic
+•	Assign Roles
+•	Create Timelines
+•	Discuss Communication
+
+Meeting Times:
+
+During Class Time  9/6/2024.
+At least Once a Week.
+Questions
+
