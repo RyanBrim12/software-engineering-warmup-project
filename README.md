@@ -9,7 +9,7 @@
 - Example: > title , > director,> writer, > duration,> release date, > rating,> genre 
 - == Equality 
 - <Less than
-- <Greater than
+-  >Greater than
 - “”  around multiple words 
 - Key words:
 - of , specific to attribute 
@@ -17,7 +17,7 @@
 - or 
 - not
 
- # Roles:
+ # To-Do:
 
 ADMIN: Program will initialize and update data to the database with a locally save JSON file. Runs once and does its thing. 
 
