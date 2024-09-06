@@ -35,9 +35,38 @@ def tokenize(sentence):
     
     return result
 
+# Find the symbol used in the query to correctly call get from firebase
+def find_query(query):
+    # TODO: Find query language used and call that function
+    return 0
+
+# TODO: Implement all relationship functions
+def less_than(query):
+    pass
+
+def less_than_equal_to(query):
+    pass
+
+def greater_than(query):
+    pass
+
+def greater_than_equal_to(query):
+    pass
+
+def equal_to(query):
+    pass
+
+def not_in(query):
+    pass
+
+def of(query):
+    pass
+
+
 if __name__ == "__main__":
     
     while True:
+        # Get user input
         sentence = input("> ").lower()
 
         # Check input
@@ -53,3 +82,41 @@ if __name__ == "__main__":
             # Call tokenize function
             tokenized = tokenize(sentence)
             print(tokenized)
+
+
+        # Perform query
+        # Check if and is in query
+        if "and" in tokenized:
+
+            # Find the index of 'and'
+            and_index = tokenized.index('and')
+
+            # Split the list into before and after
+            list_before_and = tokenized[:and_index]
+            list_after_and = tokenized[and_index+1:]
+
+            # Call 2 seperate functions for each side of and
+            result1 = find_query(list_before_and)
+            result2 = find_query(list_after_and)
+
+            # Find intersection
+            result = [item for item in result1 if item in result2]
+
+        elif "or" in tokenized:
+            # Find the index of 'or'
+            and_index = tokenized.index('or')
+
+            # Split the list into before and after
+            list_before_or = tokenized[:and_index]
+            list_after_or = tokenized[and_index+1:]
+
+            # Call 2 seperate functions for each side of 'of'
+            result1 = find_query(list_before_or)
+            result2 = find_query(list_after_or)
+
+            # Find union
+            result = list(result1.symmetric_difference(result2))
+
+        else:
+            # Call function for corresponding query
+            result = find_query(tokenized)
