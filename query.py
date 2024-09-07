@@ -36,6 +36,7 @@ def tokenize(sentence):
     return result
 
 # Find the symbol used in the query to correctly call get from firebase
+# Abi, Will work on this tonight after work 9/7/24!
 def find_query(query):
     # TODO: Find query language used and call that function
     return 0
