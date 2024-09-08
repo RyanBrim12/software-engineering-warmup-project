@@ -1,3 +1,8 @@
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import firestore
+from firebase_admin import firestore_async
+
 def tokenize(sentence):
     # Split the sentence into rough tokens
     tokens = sentence.split()  
@@ -36,31 +41,185 @@ def tokenize(sentence):
     return result
 
 # Find the symbol used in the query to correctly call get from firebase
-# Abi, Will work on this tonight after work 9/7/24!
+# Abi, Will work on this tonight after work 9/8/24!
 def find_query(query):
     # TODO: Find query language used and call that function
     return 0
 
-# TODO: Implement all relationship functions
+
+# This function compares fields less than to the desription and prints out console. Uses Firebase Connection!
 def less_than(query):
-    pass
+     # Initializing query fields needed: field and description
+    field = query[0]
+    
+    description = query[-1]
+    
+    # Initializing the Collection From Database
+    collection_group = db.collection("movies")
+    
+    # Where Clause what to find from database
+    query = collection_group.where(field,"<", number)
+    
+    # Call the database
+    results = query.get()
 
+    # foreach query within the collection, turn to dictionary print formatted nicely 
+    for result in results:
+        single_querys= result.to_dict()
+
+        print("\n\n"+single_querys["title"])
+
+        single_querys.pop("title")
+
+        for key, value in single_querys.items():
+        
+            print(f"{key}: {value}\n")
+    pass
+    
+# This function compares fields less than equal to the desription and prints out console. Uses Firebase Connection!
 def less_than_equal_to(query):
-    pass
+     # Initializing query fields needed: field and description
+    field = query[0]
+    
+    description = query[-1]
+    
+    # Initializing the Collection From Database
+    collection_group = db.collection("movies")
+    
+    # Where Clause what to find from database
+    query = collection_group.where(field,"<=", number)
+    
+    # Call the database
+    results = query.get()
 
+    # foreach query within the collection, turn to dictionary print formatted nicely 
+    for result in results:
+        single_querys= result.to_dict()
+
+        print("\n\n"+single_querys["title"])
+
+        single_querys.pop("title")
+
+        for key, value in single_querys.items():
+        
+            print(f"{key}: {value}\n")
+    pass
+    
+# This function compares fields greater than to the desription and prints out console. Uses Firebase Connection!
 def greater_than(query):
-    pass
+     # Initializing query fields needed: field and description
+    field = query[0]
+    
+    description = query[-1]
+    
+    # Initializing the Collection From Database
+    collection_group = db.collection("movies")
+    
+    # Where Clause what to find from database
+    query = collection_group.where(field,">", number)
+    
+    # Call the database
+    results = query.get()
 
+    # foreach query within the collection, turn to dictionary print formatted nicely 
+    for result in results:
+        single_querys= result.to_dict()
+
+        print("\n\n"+single_querys["title"])
+
+        single_querys.pop("title")
+
+        for key, value in single_querys.items():
+        
+            print(f"{key}: {value}\n")
+    pass
+    
+# This function compares fields greater than equal to the desription and prints out console. Uses Firebase Connection!
 def greater_than_equal_to(query):
-    pass
+     # Initializing query fields needed: field and description
+    field = query[0]
+    
+    description = query[-1]
+    
+    # Initializing the Collection From Database
+    collection_group = db.collection("movies")
+    
+    # Where Clause what to find from database
+    query = collection_group.where(field,">=", number)
+    
+    # Call the database
+    results = query.get()
 
+    # foreach query within the collection, turn to dictionary print formatted nicely 
+    for result in results:
+        single_querys= result.to_dict()
+
+        print("\n\n"+single_querys["title"])
+
+        single_querys.pop("title")
+
+        for key, value in single_querys.items():
+        
+            print(f"{key}: {value}\n")
+    pass
+# This function compares fields equal to the desription and prints out console. Uses Firebase Connection!
 def equal_to(query):
-    pass
+    
+    # Initializing query fields needed: field and description
+    field = query[0]
+    
+    description = query[-1]
+    
+    # Initializing the Collection From Database
+    collection_group = db.collection("movies")
 
+    # Where Clause, what to find from database
+    querys = collection_group.where(field,"==", description)
+
+    # Call the database with clause
+    query_snapshot = querys.get()
+
+    # foreach query within the collection, turn to dictionary print formatted nicely 
+    for query in query_snapshot:
+
+        single_query= query.to_dict()
+
+        print("\n\n"+single_query["title"])
+
+        single_query.pop("title")
+
+        for key, value in single_query.items():
+        
+            print(f"{key}: {value}\n")
+    pass
+# TODO: Implement Not_in: I wasn't sure what was meant by this --Abi
 def not_in(query):
     pass
-
+    
+# This function finds fields equal to the desription and prints out console. Uses Firebase Connection!
+# Uses title like > Director of Tenet, has title hardcoded. Will not work for anyother given field. But prints the field it wants.
 def of(query):
+    
+     # Initializing query fields needed: field and description
+    field = query[0]
+    
+    description = query[-1]
+    
+    # Initializing the Collection From Database
+    collection_group = db.collection("movies")
+    
+    # Where Clause what to find from database
+    query = collection_group.where("title","==", description)
+
+    # Call the database
+    results = query.get()
+
+    # foreach query within the collection, turn to dictionary print formatted nicely 
+    for result in results:
+
+        single_querys= result.to_dict()
+
+        print("\n\n"+single_querys[field])
     pass
 
 
@@ -74,14 +233,14 @@ if __name__ == "__main__":
         if sentence == "help":
             # This is the Help Menu, with examples of what the expected input should be 
             print("Help Menu:\n\n")
-            print("> Help \nThis key will let you access this help menu\nExample: > Help\n\n")
-            print("> Title \nThis key will access the field title \nExample: > Title = \"Ratatouille\"\n\n")
-            print("> Director \nThis key will access the field Director \nExample: > Director = \"Quentin Tarantino\"\n\n")
-            print("> Writer \nThis key will access the field Writer \nExample: > Writer = \"Christopher Nolan\"\n\n")
-            print("> Genre \nThis key will access the field Genre \nExample: > Genre = \"Comedy\"\n\n")
-            print("> Duration \nThis key will access the field duration(min) with conjunction of comparison operators \nExample: > Duration > \"90\"\n\n")
-            print("> Release Date \nThis key will access the field Release Date(year) with conjunction of comparison operators \nExample: > Release Date < \"2000\"\n\n")
-            print("> Rating \nThis key will access the field Rating with conjunction of comparison operators \nExample: > Rating == \"9\"\n\n")
+            print("Help \nThis key will let you access this help menu\nExample: Help\n\n")
+            print("Title \nThis key will access the field title \nExample: Title = \"Ratatouille\"\n\n")
+            print("Director \nThis key will access the field Director \nExample: Director = \"Quentin Tarantino\"\n\n")
+            print("Writer \nThis key will access the field Writer \nExample: Writer = \"Christopher Nolan\"\n\n")
+            print("Genre \nThis key will access the field Genre \nExample: Genre = \"Comedy\"\n\n")
+            print("Duration \nThis key will access the field duration(min) with conjunction of comparison operators \nExample: Duration > \"90\"\n\n")
+            print("Release Date \nThis key will access the field Release Date(year) with conjunction of comparison operators \nExample: Release Date < \"2000\"\n\n")
+            print("Rating \nThis key will access the field Rating with conjunction of comparison operators \nExample: > Rating == \"9\"\n\n")
             print("Key Words: \n")
             print("OF \nThis key word will find a specific attribute of a movie\nExample: Director OF \"Ratatouille\"\n\n")
             print("AND \nThis key word will find multiple specified attributes of a movie with \nExample: Director AND Duration OF \"Ratatouille\"\n\n")
