@@ -11,9 +11,10 @@ def create_collection():
                      "rating": movie["Rating"], "director": movie["Directed by"],
                      "writer": movie["Written by"], "duration": movie["Duration"]})
 
-# TODO: implement function
+
 def delete_collection():
-    pass
+    doc_ref = db.collection("movies").document(f"{movie["ID"]}").delete()
+    create_collection()
 
 if __name__ == "__main__":
     db = get_firebase_connection()
