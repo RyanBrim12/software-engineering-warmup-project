@@ -41,24 +41,67 @@ def tokenize(sentence):
     return result
 
 # Find the symbol used in the query to correctly call get from firebase
-# Abi, Will work on this tonight after work 9/8/24!
 def find_query(query):
-    # TODO: Find query language used and call that function
+    # IF query is length 3, example: "title, "==", "tenet", contiue else print try again
+    if (len(query) == 3):
+        
+        # keywords for fields
+	    keywords = ["director", "title", "genre", "duration", "rating", "writer", "release date"]
+        
+        # if first token is in the keywords continue, else try again
+	    if (query[0] in keywords):
+
+            # comparison opperators list 
+		    comparisonOpperators = [">", "<", ">=", "<=", "==", "of", "not"]
+
+            # if the 2nd token is in the list continue and send to corresponding functions else print try again
+		    if (query[1] in comparisonOpperators):
+
+			    if(query[1] == "<"):
+				    less_than(query)
+
+			    elif(query[1] == "<="):
+				    less_than_equal_to(query)
+
+			    elif(query[1] == ">"):
+				    greater_than(query)
+
+			    elif(query[1] == ">="):
+				    greater_than_equal_to(query):
+
+			    elif(query[1] == "=="):
+				    equal_to(query)
+
+			    elif(query[1] == "not"):
+				    not_in(query)
+
+			    elif(query[1] == "of"):
+				    of(query)
+		    else:
+			    print(f"{query[1]}: not a comparrison opperator in the system\nTry again or type Help for examples\n\n")
+
+	    else:
+		    print(f"{query[0]}: not a field in the system\nTry again or type Help for examples\n\n")
+
+    else:
+	
+        print ("Query input of wrong size! Try again or type Help for examples\n\n")
+    
     return 0
 
 
 # This function compares fields less than to the desription and prints out console. Uses Firebase Connection!
-def less_than(query):
+def less_than(q):
      # Initializing query fields needed: field and description
-    field = query[0]
+    field = q[0]
     
-    description = query[-1]
+    description = q[-1]
     
     # Initializing the Collection From Database
     collection_group = db.collection("movies")
     
     # Where Clause what to find from database
-    query = collection_group.where(field,"<", number)
+    query = collection_group.where(field,"<", number).order_by(field, "DESCENDING");
     
     # Call the database
     results = query.get()
@@ -77,17 +120,17 @@ def less_than(query):
     pass
     
 # This function compares fields less than equal to the desription and prints out console. Uses Firebase Connection!
-def less_than_equal_to(query):
+def less_than_equal_to(q):
      # Initializing query fields needed: field and description
-    field = query[0]
+    field = q[0]
     
-    description = query[-1]
+    description = q[-1]
     
     # Initializing the Collection From Database
     collection_group = db.collection("movies")
     
     # Where Clause what to find from database
-    query = collection_group.where(field,"<=", number)
+    query = collection_group.where(field,"<=", number).order_by(field, "DESCENDING");
     
     # Call the database
     results = query.get()
@@ -106,17 +149,17 @@ def less_than_equal_to(query):
     pass
     
 # This function compares fields greater than to the desription and prints out console. Uses Firebase Connection!
-def greater_than(query):
+def greater_than(q):
      # Initializing query fields needed: field and description
-    field = query[0]
+    field = q[0]
     
-    description = query[-1]
+    description = q[-1]
     
     # Initializing the Collection From Database
     collection_group = db.collection("movies")
     
     # Where Clause what to find from database
-    query = collection_group.where(field,">", number)
+    query = collection_group.where(field,">", number).order_by(field, "DESCENDING");
     
     # Call the database
     results = query.get()
@@ -135,17 +178,17 @@ def greater_than(query):
     pass
     
 # This function compares fields greater than equal to the desription and prints out console. Uses Firebase Connection!
-def greater_than_equal_to(query):
+def greater_than_equal_to(q):
      # Initializing query fields needed: field and description
-    field = query[0]
+    field = q[0]
     
-    description = query[-1]
+    description = q[-1]
     
     # Initializing the Collection From Database
     collection_group = db.collection("movies")
     
     # Where Clause what to find from database
-    query = collection_group.where(field,">=", number)
+    query = collection_group.where(field,">=", number).order_by(field, "DESCENDING");
     
     # Call the database
     results = query.get()
@@ -163,18 +206,18 @@ def greater_than_equal_to(query):
             print(f"{key}: {value}\n")
     pass
 # This function compares fields equal to the desription and prints out console. Uses Firebase Connection!
-def equal_to(query):
+def equal_to(q):
     
     # Initializing query fields needed: field and description
-    field = query[0]
+    field = q[0]
     
-    description = query[-1]
+    description = q[-1]
     
     # Initializing the Collection From Database
     collection_group = db.collection("movies")
 
     # Where Clause, what to find from database
-    querys = collection_group.where(field,"==", description)
+    querys = collection_group.where(field,"==", description).order_by(field, "DESCENDING");
 
     # Call the database with clause
     query_snapshot = querys.get()
@@ -193,23 +236,23 @@ def equal_to(query):
             print(f"{key}: {value}\n")
     pass
 # TODO: Implement Not_in: I wasn't sure what was meant by this --Abi
-def not_in(query):
+def not_in(q):
     pass
     
 # This function finds fields equal to the desription and prints out console. Uses Firebase Connection!
 # Uses title like > Director of Tenet, has title hardcoded. Will not work for anyother given field. But prints the field it wants.
-def of(query):
+def of(q):
     
      # Initializing query fields needed: field and description
-    field = query[0]
+    field = q[0]
     
-    description = query[-1]
+    description = q[-1]
     
     # Initializing the Collection From Database
     collection_group = db.collection("movies")
     
     # Where Clause what to find from database
-    query = collection_group.where("title","==", description)
+    query = collection_group.where("title","==", description).order_by(field, "DESCENDING");
 
     # Call the database
     results = query.get()
