@@ -237,8 +237,28 @@ def equal_to(q):
     pass
 # TODO: Implement Not_in: I wasn't sure what was meant by this --Abi
 def not_in(q):
-    pass
-    
+    feild = q[0]
+	
+    description = q[-1]
+	
+    collection_group = db.collection("movies")
+	
+    querys = collection_group(feild, "!=", description).order_by(feild, "DESCENDING")
+	
+    query_snapshot = querys.get()
+	
+    for query in query_snapshot:
+
+        single_query= query.to_dict()
+
+        print("\n\n"+single_query["title"])
+
+        single_query.pop("title")
+
+        for key, value in single_query.items():
+        
+            print(f"{key}: {value}\n")
+		
 # This function finds fields equal to the desription and prints out console. Uses Firebase Connection!
 # Uses title like > Director of Tenet, has title hardcoded. Will not work for anyother given field. But prints the field it wants.
 def of(q):
