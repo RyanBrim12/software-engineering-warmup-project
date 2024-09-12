@@ -6,7 +6,7 @@
     "Rating": 8.6,
     "Directed by": "Brad Bird, Jan Pinkava",
     "Written by": "Brad Bird, Jan Pinkava, Jim Capobianco, Emily Cook, Kathy Greenberg, Bob Peterson",
-    "Duration": "1 h 51 m",
+    "Duration": "111",
     "Genres": "Animation,Adventure,Comedy,Family,Fantasy"
   },
   {
@@ -16,7 +16,7 @@
     "Rating": 8.9,
     "Directed by": "Quentin Tarantino",
     "Written by": "Quentin Tarantino, Roger Avary",
-    "Duration": "2 h 34 m",
+    "Duration": "154",
     "Genres": "Crime,Drama"
   },
   {
@@ -26,7 +26,7 @@
     "Rating": 7.4,
     "Directed by": "Christopher Nolan",
     "Written by": "Christopher Nolan",
-    "Duration": "2 h 30 m",
+    "Duration": "150",
     "Genres": "Action,Sci-Fi,Thriller"
   },
   {
@@ -36,7 +36,7 @@
     "Rating": 8.5,
     "Directed by": "Christopher Nolan",
     "Written by": "Christopher Nolan, Kai Bird, Martin Sherwin",
-    "Duration": "3 h",
+    "Duration": "180",
     "Genres": "Biography,Drama,History"
   },
   {
@@ -46,7 +46,7 @@
     "Rating": 8.8,
     "Directed by": "Christopher Nolan",
     "Written by": "Christopher Nolan",
-    "Duration": "2 h 28 m",
+    "Duration": "148",
     "Genres": "Action,Adventure,Sci-Fi,Thriller"
   },
   {
@@ -56,7 +56,7 @@
     "Rating": 8.8,
     "Directed by": "Christopher Nolan",
     "Written by": "Jonathan Nolan, Christopher Nolan",
-    "Duration": "2 h 49 m",
+    "Duration": "169",
     "Genres": "Adventure,Drama,Sci-Fi"
   },
   {
@@ -66,7 +66,7 @@
     "Rating": 8.8,
     "Directed by": "Quentin Tarantino",
     "Written by": "Quentin Tarantino, Uma Thurman",
-    "Duration": "1 h 51 m",
+    "Duration": "111",
     "Genres": "Action,Crime,Thriller"
   },
   {
@@ -76,7 +76,7 @@
     "Rating": 8.6,
     "Directed by": "Quentin Tarantino",
     "Written by": "Quentin Tarantino",
-    "Duration": "2 h 45 m",
+    "Duration": "165",
     "Genres": "Comedy,Drama,Western"
   },
   {
@@ -86,7 +86,7 @@
     "Rating": 8.6,
     "Directed by": "Quentin Tarantino",
     "Written by": "Quentin Tarantino, Roger Avary",
-    "Duration": "1 h 39 m",
+    "Duration": "99",
     "Genres": "Crime,Thriller"
   },
   {
@@ -96,7 +96,7 @@
     "Rating": 8.7,
     "Directed by": "Martin Scorsese",
     "Written by": "Nicholas Pileggi, Martin Scorsese",
-    "Duration": "2 h 26 m",
+    "Duration": "146",
     "Genres": "Biography,Crime,Drama"
   },
   {
@@ -106,7 +106,7 @@
     "Rating": 8.7,
     "Directed by": "Martin Scorsese",
     "Written by": "Laeta Kalogridis, Dennis Lehane",
-    "Duration": "2 h 18 m",
+    "Duration": "138",
     "Genres": "Drama,Mystery,Thriller"
   },
   {
@@ -116,7 +116,7 @@
     "Rating": 7.6,
     "Directed by": "Martin Scorsese",
     "Written by": "Eric Roth, Martin Scorsese, David Grann",
-    "Duration": "3 h 26 m",
+    "Duration": "206",
     "Genres": "Crime,Drama,History,Mystery,Romance,Western"
   },
   {
@@ -126,7 +126,7 @@
     "Rating": 8.8,
     "Directed by": "Steven Spielberg",
     "Written by": "Robert Rodat",
-    "Duration": "2 h 49 m",
+    "Duration": "169",
     "Genres": "Drama,War"
   },
   {
@@ -136,7 +136,7 @@
     "Rating": 8.8,
     "Directed by": "Steven Spielberg",
     "Written by": "Michael Crichton, David Koepp",
-    "Duration": "2 h 7 m",
+    "Duration": "127",
     "Genres": "Action,Adventure,Sci-Fi,Thriller"
   },
   {
@@ -146,7 +146,7 @@
     "Rating": 8.5,
     "Directed by": "Steven Spielberg",
     "Written by": "Peter Benchley, Carl Gottlieb",
-    "Duration": "2 h 4 m",
+    "Duration": "124",
     "Genres": "Adventure,Drama,Thriller"
   },
   {
@@ -156,7 +156,7 @@
     "Rating": 5.8,
     "Directed by": "Steven Spielberg",
     "Written by": "David Koepp, George Lucas, Jeff Nathanson, Philip Kaufman",
-    "Duration": "2 h 2 m",
+    "Duration": "122",
     "Genres": "Action,Adventure"
   },
   {
@@ -166,7 +166,7 @@
     "Rating": 7.4,
     "Directed by": "Stanley Kubrick",
     "Written by": "Stanley Kubrick, Michael Herr, Gustav Hasford",
-    "Duration": "1 h 56 m",
+    "Duration": "116",
     "Genres": "Drama,War"
   },
   {
@@ -176,7 +176,7 @@
     "Rating": 7.3,
     "Directed by": "Stanley Kubrick",
     "Written by": "Stanley Kubrick, Anthony Burgess",
-    "Duration": "2 h 16 m",
+    "Duration": "136",
     "Genres": "Crime,Sci-Fi"
   },
   {
@@ -186,7 +186,7 @@
     "Rating": 5.9,
     "Directed by": "Stanley Kubrick",
     "Written by": "Stanley Kubrick, Frederic Raphael, Arthur Schnitzler",
-    "Duration": "2 h 39 m",
+    "Duration": "159",
     "Genres": "Drama,Mystery,Thriller"
   },
   {
@@ -196,7 +196,7 @@
     "Rating": 8.5,
     "Directed by": "Liz Garbus",
     "Written by": "",
-    "Duration": "1 h 33 m",
+    "Duration": "93",
     "Genres": "Documentary,Biography,History,Sport"
   },
   {
@@ -206,7 +206,7 @@
     "Rating": 8.3,
     "Directed by": "Joshua Oppenheimer",
     "Written by": "",
-    "Duration": "1 h 43 m",
+    "Duration": "103",
     "Genres": "Documentary,Biography,History"
   },
   {
@@ -216,7 +216,7 @@
     "Rating": 8.1,
     "Directed by": "Todd Douglas Miller",
     "Written by": "",
-    "Duration": "1 h 33 m",
+    "Duration": "93",
     "Genres": "Documentary,History"
   },
   {
@@ -226,7 +226,7 @@
     "Rating": 7.3,
     "Directed by": "Nick Broomfield",
     "Written by": "",
-    "Duration": "1 h 48 m",
+    "Duration": "108",
     "Genres": "Documentary,Biography,Crime,Music"
   },
   {
@@ -236,7 +236,7 @@
     "Rating": 7.3,
     "Directed by": "Dan Cutforth, Jane Lipsitz",
     "Written by": "",
-    "Duration": "1 h 33 m",
+    "Duration": "93",
     "Genres": "Documentary,Biography,Music"
   },
   {
@@ -246,7 +246,7 @@
     "Rating": 7,
     "Directed by": "Jeff Malmberg",
     "Written by": "",
-    "Duration": "1 h 29 m",
+    "Duration": "89",
     "Genres": "Documentary,Biography"
   },
   {
@@ -256,7 +256,7 @@
     "Rating": 6.8,
     "Directed by": "Billy Corben",
     "Written by": "",
-    "Duration": "1 h 58 m",
+    "Duration": "118",
     "Genres": "Documentary,Crime,History"
   },
   {
@@ -266,7 +266,7 @@
     "Rating": 6.6,
     "Directed by": "Sam Wrench",
     "Written by": "",
-    "Duration": "2 h 40 m",
+    "Duration": "160",
     "Genres": "Documentary,Music"
   },
   {
@@ -276,7 +276,7 @@
     "Rating": 6.6,
     "Directed by": "David Alvarado, Jason Sussberg",
     "Written by": "",
-    "Duration": "1 h 41 m",
+    "Duration": "101",
     "Genres": "Documentary"
   },
   {
@@ -286,7 +286,7 @@
     "Rating": 6.3,
     "Directed by": "Morgan Neville",
     "Written by": "",
-    "Duration": "1 h 58 m",
+    "Duration": "118",
     "Genres": "Documentary"
   },
   {
@@ -296,7 +296,7 @@
     "Rating": 7.6,
     "Directed by": "Gavin O'Connor",
     "Written by": "Eric Guggenheim",
-    "Duration": "2 h 15 m",
+    "Duration": "135",
     "Genres": "Biography,Drama,History,Sport"
   },
   {
@@ -306,7 +306,7 @@
     "Rating": 8,
     "Directed by": "Phil Lord, Christopher Miller",
     "Written by": "Michael Bacall, Oren Uziel, Rodney Rothman, Jonah Hill",
-    "Duration": "1 h 52 m",
+    "Duration": "112",
     "Genres": "Action,Comedy,Crime"
   },
   {
@@ -316,7 +316,8 @@
     "Rating": 7.9,
     "Directed by": "Phil Lord, Christopher Miller",
     "Written by": "Michael Bacall, Jonah Hill, Patrick Hasburgh, Stephen J. Cannell",
-    "Duration": "1 h 49 m",
+    "Duration": "109",
     "Genres": "Action,Comedy,Crime"
   }
 ]
+
