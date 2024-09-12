@@ -41,6 +41,8 @@ def tokenize(sentence):
     return result
 
 # Find the symbol used in the query to correctly call get from firebase
+# TODO: Handle 2 queries at Once? Should this return Boolean  true, if the array is found. False if the array is empty?
+
 def find_query(query):
     # IF query is length 3, example: "title, "==", "tenet", contiue else print try again
     if (len(query) == 3):
@@ -89,6 +91,9 @@ def find_query(query):
     
     return 0
 
+# TODO: Should these return booleans true if array found, false if array is empty?
+# These could also have count totals printed at the begining of the search: example: Total Movies Found: 28
+# Should these return the queries? To work with line 360? Or should we change line 360 and have another function to deal with 2 operators?
 
 # This function compares fields less than to the desription and prints out console. Uses Firebase Connection!
 def less_than(q):
@@ -293,6 +298,7 @@ if __name__ == "__main__":
         sentence = input("> ").lower()
 
         # Check input
+        # TODO: Does the NOT make sense or do we want "!="? Do we want " " around numbers? example: rating > "3"?
         if sentence == "help":
             # This is the Help Menu, with examples of what the expected input should be 
             print("Help Menu:\n\n")
@@ -303,11 +309,11 @@ if __name__ == "__main__":
             print("Genre \nThis key will access the field Genre \nExample: Genre = \"Comedy\"\n\n")
             print("Duration \nThis key will access the field duration(min) with conjunction of comparison operators \nExample: Duration > \"90\"\n\n")
             print("Release Date \nThis key will access the field Release Date(year) with conjunction of comparison operators \nExample: Release Date < \"2000\"\n\n")
-            print("Rating \nThis key will access the field Rating with conjunction of comparison operators \nExample: > Rating == \"9\"\n\n")
+            print("Rating \nThis key will access the field Rating with conjunction of comparison operators \nExample: Rating == \"9\"\n\n")
             print("Key Words: \n")
             print("OF \nThis key word will find a specific attribute of a movie\nExample: Director OF \"Ratatouille\"\n\n")
             print("AND \nThis key word will find multiple specified attributes of a movie with \nExample: Director AND Duration OF \"Ratatouille\"\n\n")
-            print("NOT \nThis key word will find all but the specified attributes of a movie left out  \nExample: > Duration > \"90\" NOT > Director = \"Christopher Nolan\"\n\n")
+            print("NOT \nThis key word will find all but the specified attributes of a movie left out  \nExample:  Duration > \"90\" NOT > Director = \"Christopher Nolan\"\n\n")
             pass
         elif sentence == "quit":
             break
