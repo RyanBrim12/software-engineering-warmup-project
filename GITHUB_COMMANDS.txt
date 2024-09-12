@@ -1,0 +1,26 @@
+# Open Terminal!
+
+Go to folder where you want to save project.
+
+# Add project by cloning:
+
+git clone https://github.com/RyanBrim12/software-engineering-warmup-project.git
+
+#Always Pull from Repo first to make sure the project is up-to-date, before pushing so no merge conflicts:
+
+git pull
+
+
+# Add file you want were working on:
+
+git add query.py
+
+# Add commit message of what you did:
+
+git commit -m "I fixed the function..."
+
+# Push the file to the git repo, with the branch you're on:
+
+git push origin main
+
+# If a merge conflict happens pull again and try from there!
