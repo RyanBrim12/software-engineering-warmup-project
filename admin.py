@@ -1,22 +1,21 @@
 import json
-from firebase import get_firebase_connection
+from firebase import Firebase_Connection, Movie
 
 
-def create_collection():
-    with open("movies.json") as f:
+def get_movies_from_file(file_name):
+    with open(file_name) as f:
         file_contents = json.load(f)
+    movies = []
     for movie in file_contents:
-        doc_ref = db.collection("movies").document(f"{movie["ID"]}")
-        doc_ref.set({"title": movie["Title"], "release": movie["Release Date"],
-                     "rating": movie["Rating"], "director": movie["Directed by"],
-                     "writer": movie["Written by"], "duration": movie["Duration"]})
+        movies.append(Movie(movie["ID"], movie["Title"],
+                            movie["Release Date"], movie["Rating"],
+                            movie["Directed by"], movie["Written by"],
+                            movie["Duration"], movie["Genres"]))
+    return movies
 
-
-def delete_collection():
-    doc_ref = db.collection("movies").document(f"{movie["ID"]}").delete()
-    create_collection()
 
 if __name__ == "__main__":
-    db = get_firebase_connection()
-    delete_collection()
-    create_collection()
+    fb = Firebase_Connection()
+    movies = get_movies_from_file("movies.json")
+    fb.delete_collection()
+    fb.create_collection(movies)
