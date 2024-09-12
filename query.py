@@ -42,6 +42,7 @@ def tokenize(sentence):
 
 # Find the symbol used in the query to correctly call get from firebase
 # TODO: Handle 2 queries at Once? Should this return Boolean  true, if the array is found. False if the array is empty?
+# Main should handle this with the 'and' and 'or' catches
 
 def find_query(query):
     # IF query is length 3, example: "title, "==", "tenet", contiue else print try again
