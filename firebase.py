@@ -32,7 +32,7 @@ class Firebase_Connection:
         self.collection_name = collection_name
 
 
-    def complete_query(self, field, operator, value):
+    def complete_query(self, field, operator, value) -> list[Movie]:
         collection = self.db.collection(self.collection_name)
         query = collection.where(filter=FieldFilter(field, operator, value))
         results = query.stream()
