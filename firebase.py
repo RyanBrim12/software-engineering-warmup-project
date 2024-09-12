@@ -8,3 +8,7 @@ def get_firebase_connection():
     app = firebase_admin.initialize_app(cred)
     db = firestore.client()
     return db
+
+
+def complete_query(field, operator, value):
+    pass
