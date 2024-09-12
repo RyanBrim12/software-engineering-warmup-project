@@ -70,7 +70,7 @@ def find_query(query, connect):
                     if (query[1] != "==" or query[1] != "of"):
 
                         print(f"Cannot use \"{query[1]}\" with keyword: {query[0]}")
-                        
+
                     else:
 
                         queryResult = connect.complete_query(query[0], query[1], query[2])
@@ -154,7 +154,7 @@ if __name__ == "__main__":
                 # Print Results
                 for r in result:
 
-                    print(firebaseConnect)
+                    print(r)
 
         elif "or" in tokenized:
             # Find the index of 'or'
@@ -179,7 +179,7 @@ if __name__ == "__main__":
                 # Print Results
                 for r in result:
 
-                    print(firebaseConnect)
+                    print(r)
 
         else:
             # Call function for corresponding query
@@ -193,7 +193,7 @@ if __name__ == "__main__":
                 # Print Results
                 for r in result:
 
-                    print(firebaseConnect)
+                    print(r)
 
             
             
