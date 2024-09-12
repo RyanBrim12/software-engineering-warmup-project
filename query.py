@@ -49,42 +49,42 @@ def find_query(query):
     if (len(query) == 3):
         
         # keywords for fields
-	    keywords = ["director", "title", "genre", "duration", "rating", "writer", "release date"]
+        keywords = ["director", "title", "genre", "duration", "rating", "writer", "release date"]
         
         # if first token is in the keywords continue, else try again
-	    if (query[0] in keywords):
+        if (query[0] in keywords):
 
             # comparison opperators list 
-		    comparisonOpperators = [">", "<", ">=", "<=", "==", "of", "not"]
+            comparisonOpperators = [">", "<", ">=", "<=", "==", "of", "not"]
 
             # if the 2nd token is in the list continue and send to corresponding functions else print try again
-		    if (query[1] in comparisonOpperators):
+            if (query[1] in comparisonOpperators):
 
-			    if(query[1] == "<"):
-				    less_than(query)
+                if(query[1] == "<"):
+                    less_than(query)
 
-			    elif(query[1] == "<="):
-				    less_than_equal_to(query)
+                elif(query[1] == "<="):
+                    less_than_equal_to(query)
 
-			    elif(query[1] == ">"):
-				    greater_than(query)
+                elif(query[1] == ">"):
+                    greater_than(query)
 
-			    elif(query[1] == ">="):
-				    greater_than_equal_to(query):
+                elif(query[1] == ">="):
+                    greater_than_equal_to(query)
 
-			    elif(query[1] == "=="):
-				    equal_to(query)
+                elif(query[1] == "=="):
+                    equal_to(query)
 
-			    elif(query[1] == "not"):
-				    not_in(query)
+                elif(query[1] == "not"):
+                    not_in(query)
 
-			    elif(query[1] == "of"):
-				    of(query)
-		    else:
-			    print(f"{query[1]}: not a comparrison opperator in the system\nTry again or type Help for examples\n\n")
+                elif(query[1] == "of"):
+                    of(query)
+                else:
+                    print(f"{query[1]}: not a comparrison opperator in the system\nTry again or type Help for examples\n\n")
 
-	    else:
-		    print(f"{query[0]}: not a field in the system\nTry again or type Help for examples\n\n")
+            else:
+                print(f"{query[0]}: not a field in the system\nTry again or type Help for examples\n\n")
 
     else:
 	
@@ -107,7 +107,7 @@ def less_than(q):
     collection_group = db.collection("movies")
     
     # Where Clause what to find from database
-    query = collection_group.where(field,"<", number).order_by(field, "DESCENDING");
+    query = collection_group.where(field,"<", description).order_by(field, "DESCENDING");
     
     # Call the database
     results = query.get()
@@ -123,7 +123,7 @@ def less_than(q):
         for key, value in single_querys.items():
         
             print(f"{key}: {value}\n")
-    pass
+
     
 # This function compares fields less than equal to the desription and prints out console. Uses Firebase Connection!
 def less_than_equal_to(q):
@@ -152,7 +152,7 @@ def less_than_equal_to(q):
         for key, value in single_querys.items():
         
             print(f"{key}: {value}\n")
-    pass
+
     
 # This function compares fields greater than to the desription and prints out console. Uses Firebase Connection!
 def greater_than(q):
@@ -181,7 +181,7 @@ def greater_than(q):
         for key, value in single_querys.items():
         
             print(f"{key}: {value}\n")
-    pass
+
     
 # This function compares fields greater than equal to the desription and prints out console. Uses Firebase Connection!
 def greater_than_equal_to(q):
@@ -210,7 +210,8 @@ def greater_than_equal_to(q):
         for key, value in single_querys.items():
         
             print(f"{key}: {value}\n")
-    pass
+
+
 # This function compares fields equal to the desription and prints out console. Uses Firebase Connection!
 def equal_to(q):
     
@@ -240,7 +241,8 @@ def equal_to(q):
         for key, value in single_query.items():
         
             print(f"{key}: {value}\n")
-    pass
+
+
 # TODO: Implement Not_in: I wasn't sure what was meant by this --Abi
 def not_in(q):
     feild = q[0]
@@ -265,6 +267,7 @@ def not_in(q):
         
             print(f"{key}: {value}\n")
 		
+
 # This function finds fields equal to the desription and prints out console. Uses Firebase Connection!
 # Uses title like > Director of Tenet, has title hardcoded. Will not work for anyother given field. But prints the field it wants.
 def of(q):
@@ -289,7 +292,6 @@ def of(q):
         single_querys= result.to_dict()
 
         print("\n\n"+single_querys[field])
-    pass
 
 
 if __name__ == "__main__":
@@ -315,7 +317,6 @@ if __name__ == "__main__":
             print("OF \nThis key word will find a specific attribute of a movie\nExample: Director OF \"Ratatouille\"\n\n")
             print("AND \nThis key word will find multiple specified attributes of a movie with \nExample: Director AND Duration OF \"Ratatouille\"\n\n")
             print("NOT \nThis key word will find all but the specified attributes of a movie left out  \nExample:  Duration > \"90\" NOT > Director = \"Christopher Nolan\"\n\n")
-            pass
         elif sentence == "quit":
             break
         elif sentence.count('\"') % 2 != 0:
