@@ -64,7 +64,7 @@ def find_query(query, connect):
                     queryResult = connect.complete_query(query[0], "==", query[2])
 
                 # check if keyword isn't an integer variable
-                elif ( query[0] != "duration" and query[0] != "rating"):
+                elif ( query[0] != "duration" or query[0] != "rating" or query[0] != "release date"):
 
                     # check if comparison is not < > >= <=
                     if (query[1] != "==" or query[1] != "of"):
