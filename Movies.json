@@ -2,7 +2,7 @@
   {
     "ID": 35,
     "Title": "Ratatouille",
-    "Release Date": "29-Jun-07",
+    "Release Date": "2007",
     "Rating": 8.6,
     "Directed by": "Brad Bird, Jan Pinkava",
     "Written by": "Brad Bird, Jan Pinkava, Jim Capobianco, Emily Cook, Kathy Greenberg, Bob Peterson",
@@ -12,7 +12,7 @@
   {
     "ID": 59,
     "Title": "Pulp Fiction",
-    "Release Date": "14-Oct-94",
+    "Release Date": "1994",
     "Rating": 8.9,
     "Directed by": "Quentin Tarantino",
     "Written by": "Quentin Tarantino, Roger Avary",
@@ -22,7 +22,7 @@
   {
     "ID": 5478,
     "Title": "Tenet",
-    "Release Date": "3-Sep-20",
+    "Release Date": "2020",
     "Rating": 7.4,
     "Directed by": "Christopher Nolan",
     "Written by": "Christopher Nolan",
@@ -32,7 +32,7 @@
   {
     "ID": 275,
     "Title": "Oppenheimer",
-    "Release Date": "21-Jul-23",
+    "Release Date": "2023",
     "Rating": 8.5,
     "Directed by": "Christopher Nolan",
     "Written by": "Christopher Nolan, Kai Bird, Martin Sherwin",
@@ -42,7 +42,7 @@
   {
     "ID": 3529,
     "Title": "Inception",
-    "Release Date": "16-Jul-10",
+    "Release Date": "2010",
     "Rating": 8.8,
     "Directed by": "Christopher Nolan",
     "Written by": "Christopher Nolan",
@@ -52,7 +52,7 @@
   {
     "ID": 3650,
     "Title": "Interstellar",
-    "Release Date": "5-Nov-14",
+    "Release Date": "2014",
     "Rating": 8.8,
     "Directed by": "Christopher Nolan",
     "Written by": "Jonathan Nolan, Christopher Nolan",
@@ -62,7 +62,7 @@
   {
     "ID": 5577,
     "Title": "Kill Bill: Vol. 1",
-    "Release Date": "10-Oct-03",
+    "Release Date": "2003",
     "Rating": 8.8,
     "Directed by": "Quentin Tarantino",
     "Written by": "Quentin Tarantino, Uma Thurman",
@@ -72,7 +72,7 @@
   {
     "ID": 1567,
     "Title": "Django Unchained",
-    "Release Date": "25-Dec-12",
+    "Release Date": "2012",
     "Rating": 8.6,
     "Directed by": "Quentin Tarantino",
     "Written by": "Quentin Tarantino",
@@ -82,7 +82,7 @@
   {
     "ID": 1588,
     "Title": "Reservoir Dogs",
-    "Release Date": "1-Oct-92",
+    "Release Date": "1992",
     "Rating": 8.6,
     "Directed by": "Quentin Tarantino",
     "Written by": "Quentin Tarantino, Roger Avary",
@@ -92,7 +92,7 @@
   {
     "ID": 175,
     "Title": "Goodfellas",
-    "Release Date": "1-Sep-90",
+    "Release Date": "1990",
     "Rating": 8.7,
     "Directed by": "Martin Scorsese",
     "Written by": "Nicholas Pileggi, Martin Scorsese",
@@ -102,7 +102,7 @@
   {
     "ID": 7908,
     "Title": "Shutter Island",
-    "Release Date": "19-Feb-10",
+    "Release Date": "2010",
     "Rating": 8.7,
     "Directed by": "Martin Scorsese",
     "Written by": "Laeta Kalogridis, Dennis Lehane",
@@ -112,7 +112,7 @@
   {
     "ID": 308,
     "Title": "Killers of the Flower Moon",
-    "Release Date": "20-Oct-23",
+    "Release Date": "2023",
     "Rating": 7.6,
     "Directed by": "Martin Scorsese",
     "Written by": "Eric Roth, Martin Scorsese, David Grann",
@@ -122,7 +122,7 @@
   {
     "ID": 235,
     "Title": "Saving Private Ryan",
-    "Release Date": "24-Jul-98",
+    "Release Date": "1998",
     "Rating": 8.8,
     "Directed by": "Steven Spielberg",
     "Written by": "Robert Rodat",
@@ -132,7 +132,7 @@
   {
     "ID": 5982,
     "Title": "Jurassic Park",
-    "Release Date": "11-Jun-93",
+    "Release Date": "1993",
     "Rating": 8.8,
     "Directed by": "Steven Spielberg",
     "Written by": "Michael Crichton, David Koepp",
@@ -142,7 +142,7 @@
   {
     "ID": 484,
     "Title": "Jaws",
-    "Release Date": "20-Jun-75",
+    "Release Date": "1975",
     "Rating": 8.5,
     "Directed by": "Steven Spielberg",
     "Written by": "Peter Benchley, Carl Gottlieb",
@@ -152,7 +152,7 @@
   {
     "ID": 7012,
     "Title": "Indiana Jones and the Kingdom of the Crystal Skull",
-    "Release Date": "22-May-08",
+    "Release Date": "2008",
     "Rating": 5.8,
     "Directed by": "Steven Spielberg",
     "Written by": "David Koepp, George Lucas, Jeff Nathanson, Philip Kaufman",
@@ -162,7 +162,7 @@
   {
     "ID": 2238,
     "Title": "Full Metal Jacket",
-    "Release Date": "26-Jun-87",
+    "Release Date": "1987",
     "Rating": 7.4,
     "Directed by": "Stanley Kubrick",
     "Written by": "Stanley Kubrick, Michael Herr, Gustav Hasford",
@@ -172,7 +172,7 @@
   {
     "ID": 2506,
     "Title": "A Clockwork Orange",
-    "Release Date": "20-Dec-71",
+    "Release Date": "1971",
     "Rating": 7.3,
     "Directed by": "Stanley Kubrick",
     "Written by": "Stanley Kubrick, Anthony Burgess",
@@ -182,7 +182,7 @@
   {
     "ID": 5466,
     "Title": "Eyes Wide Shut",
-    "Release Date": "16-Jul-99",
+    "Release Date": "1999",
     "Rating": 5.9,
     "Directed by": "Stanley Kubrick",
     "Written by": "Stanley Kubrick, Frederic Raphael, Arthur Schnitzler",
@@ -192,7 +192,7 @@
   {
     "ID": 3019,
     "Title": "Bobby Fischer Against the World",
-    "Release Date": "9-Sep-11",
+    "Release Date": "2011",
     "Rating": 8.5,
     "Directed by": "Liz Garbus",
     "Written by": "",
@@ -202,7 +202,7 @@
   {
     "ID": 177,
     "Title": "The Look of Silence",
-    "Release Date": "17-Jul-15",
+    "Release Date": "2015",
     "Rating": 8.3,
     "Directed by": "Joshua Oppenheimer",
     "Written by": "",
@@ -212,7 +212,7 @@
   {
     "ID": 432,
     "Title": "Apollo 11",
-    "Release Date": "1-Mar-19",
+    "Release Date": "2019",
     "Rating": 8.1,
     "Directed by": "Todd Douglas Miller",
     "Written by": "",
@@ -222,7 +222,7 @@
   {
     "ID": 7776,
     "Title": "Biggie and Tupac",
-    "Release Date": "27-Sep-02",
+    "Release Date": "2002",
     "Rating": 7.3,
     "Directed by": "Nick Broomfield",
     "Written by": "",
@@ -232,7 +232,7 @@
   {
     "ID": 9735,
     "Title": "Katy Perry: Part of Me",
-    "Release Date": "5-Jul-12",
+    "Release Date": "2012",
     "Rating": 7.3,
     "Directed by": "Dan Cutforth, Jane Lipsitz",
     "Written by": "",
@@ -242,7 +242,7 @@
   {
     "ID": 6805,
     "Title": "Mickey: The Story of a Mouse",
-    "Release Date": "18-Nov-22",
+    "Release Date": "2022",
     "Rating": 7,
     "Directed by": "Jeff Malmberg",
     "Written by": "",
@@ -252,7 +252,7 @@
   {
     "ID": 9079,
     "Title": "Cocaine Cowboys",
-    "Release Date": "27-Oct-06",
+    "Release Date": "2006",
     "Rating": 6.8,
     "Directed by": "Billy Corben",
     "Written by": "",
@@ -262,7 +262,7 @@
   {
     "ID": 1231,
     "Title": "Taylor Swift: The Eras Tour",
-    "Release Date": "13-Oct-23",
+    "Release Date": "2023",
     "Rating": 6.6,
     "Directed by": "Sam Wrench",
     "Written by": "",
@@ -272,7 +272,7 @@
   {
     "ID": 3972,
     "Title": "Bill Nye: Science Guy",
-    "Release Date": "27-Oct-17",
+    "Release Date": "2017",
     "Rating": 6.6,
     "Directed by": "David Alvarado, Jason Sussberg",
     "Written by": "",
@@ -282,7 +282,7 @@
   {
     "ID": 2305,
     "Title": "Roadrunner: A Film About Anthony Bourdain",
-    "Release Date": "16-Jul-21",
+    "Release Date": "2021",
     "Rating": 6.3,
     "Directed by": "Morgan Neville",
     "Written by": "",
@@ -292,7 +292,7 @@
   {
     "ID": 5793,
     "Title": "Miracle",
-    "Release Date": "6-Feb-04",
+    "Release Date": "2004",
     "Rating": 7.6,
     "Directed by": "Gavin O'Connor",
     "Written by": "Eric Guggenheim",
@@ -302,7 +302,7 @@
   {
     "ID": 4667,
     "Title": "22 Jump Street",
-    "Release Date": "13-Jun-14",
+    "Release Date": "2014",
     "Rating": 8,
     "Directed by": "Phil Lord, Christopher Miller",
     "Written by": "Michael Bacall, Oren Uziel, Rodney Rothman, Jonah Hill",
@@ -312,7 +312,7 @@
   {
     "ID": 5543,
     "Title": "21 Jump Street",
-    "Release Date": "16-Mar-12",
+    "Release Date": "2012",
     "Rating": 7.9,
     "Directed by": "Phil Lord, Christopher Miller",
     "Written by": "Michael Bacall, Jonah Hill, Patrick Hasburgh, Stephen J. Cannell",
