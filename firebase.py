@@ -27,12 +27,11 @@ class FirebaseConnection:
     def __init__(self, collection_name) -> None:
         cred = credentials.Certificate('serviceAccountKey.json')
         firebase_admin.initialize_app(cred)
-        self.client_connection = firestore.client()
-        self.collection_name = collection_name
+        self.client_connection = firestore.client().collection(collection_name)
 
 
     def complete_query(self, field, operator, value) -> list[Movie]:
-        collection = self.client_connection.collection(self.collection_name)
+        collection = self.client_connection
         query = collection.where(filter=FieldFilter(field, operator, value))
         results = query.stream()
         movies = []
@@ -49,11 +48,10 @@ class FirebaseConnection:
         if batch_size == 0:
             return
 
-        docs = self.client_connection.collection(self.collection_name).list_documents(page_size=batch_size)
+        docs = self.client_connection.list_documents(page_size=batch_size)
         deleted = 0
 
         for doc in docs:
-            print(f"Deleting doc {doc.id} => {doc.get().to_dict()}")
             doc.delete()
             deleted = deleted + 1
 
@@ -63,7 +61,7 @@ class FirebaseConnection:
 
     def create_collection(self, movies):
         for m in movies:
-            doc_ref = self.client_connection.collection(self.collection_name).document(m.id)
+            doc_ref = self.client_connection.document(m.id)
             doc_ref.set({"title": m.title, "release": m.release_date,
                          "rating": m.rating, "directors": m.directors,
                          "writers": m.writers, "duration": m.duration,
