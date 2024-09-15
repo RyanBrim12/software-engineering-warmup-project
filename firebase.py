@@ -45,8 +45,20 @@ class FirebaseConnection:
         return movies
 
 
-    def delete_collection(self):
-        pass
+    def delete_collection(self, batch_size):
+        if batch_size == 0:
+            return
+
+        docs = self.client_connection.collection(self.collection_name).list_documents(page_size=batch_size)
+        deleted = 0
+
+        for doc in docs:
+            print(f"Deleting doc {doc.id} => {doc.get().to_dict()}")
+            doc.delete()
+            deleted = deleted + 1
+
+        if deleted >= batch_size:
+            return self.delete_collection(batch_size)
 
 
     def create_collection(self, movies):

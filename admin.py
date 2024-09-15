@@ -17,5 +17,5 @@ def get_movies_from_file(file_name):
 if __name__ == "__main__":
     fb = FirebaseConnection("movies")
     movies = get_movies_from_file("movies.json")
-    fb.delete_collection()
+    fb.delete_collection(len(movies))
     fb.create_collection(movies)
