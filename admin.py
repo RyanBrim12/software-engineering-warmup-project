@@ -1,5 +1,5 @@
 import json
-from firebase import Firebase_Connection, Movie
+from firebase import FirebaseConnection, Movie
 
 
 def get_movies_from_file(file_name):
@@ -15,7 +15,7 @@ def get_movies_from_file(file_name):
 
 
 if __name__ == "__main__":
-    fb = Firebase_Connection("movies")
+    fb = FirebaseConnection("movies")
     movies = get_movies_from_file("movies.json")
     fb.delete_collection()
     fb.create_collection(movies)
