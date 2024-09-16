@@ -95,7 +95,7 @@ def find_query(query, connect):
 if __name__ == "__main__":
 
     # create instance of Firebase_Connection
-    firebaseConnect = firebase.Firebase_Connection("movies")
+    firebaseConnect = firebase.FirebaseConnection("movies")
     
     while True:
         # Get user input
