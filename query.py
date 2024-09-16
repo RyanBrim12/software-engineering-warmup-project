@@ -47,7 +47,7 @@ def find_query(query, connect):
         queryResult = []
 
         # keywords for fields
-        keywords = ["director", "title", "genre", "duration", "rating", "writer", "release date"]
+        keywords = ["directors", "title", "genre", "duration", "rating", "writers", "release date"]
         
         # if first token is in the keywords continue, else try again
         if (query[0] in keywords):
@@ -61,7 +61,7 @@ def find_query(query, connect):
                 # if query operator is of 
                 if( query[1] == "of"):
 
-                    queryResult = connect.complete_query(query[0], "==", query[2])
+                    queryResult = connect.complete_query("title", "==", query[2])
 
                 # check if keyword isn't an integer variable
                 elif ( query[0] != "duration" and query[0] != "rating" and query[0] != "release date"):
@@ -70,6 +70,9 @@ def find_query(query, connect):
                     if (query[1] != "==" or query[1] != "of"):
 
                         print(f"Cannot use \"{query[1]}\" with keyword: {query[0]}")
+                    
+                    elif( query[1] == "of"):
+                        queryResult = connect.complete_query("title", "==", query[2])
 
                     else:
 
@@ -95,7 +98,7 @@ def find_query(query, connect):
 if __name__ == "__main__":
 
     # create instance of Firebase_Connection
-    firebaseConnect = firebase.Firebase_Connection("movies")
+    firebaseConnect = firebase.FirebaseConnection("movies")
     
     while True:
         # Get user input
@@ -106,16 +109,16 @@ if __name__ == "__main__":
             # This is the Help Menu, with examples of what the expected input should be 
             print("Help Menu:\n\n")
             print("Help \nThis key will let you access this help menu\nExample: Help\n\n")
-            print("Title \nThis key will access the field title \nExample: Title = \"Ratatouille\"\n\n")
-            print("Director \nThis key will access the field Director \nExample: Director = \"Quentin Tarantino\"\n\n")
-            print("Writer \nThis key will access the field Writer \nExample: Writer = \"Christopher Nolan\"\n\n")
-            print("Genre \nThis key will access the field Genre \nExample: Genre = \"Comedy\"\n\n")
+            print("Title \nThis key will access the field title \nExample: Title == \"Ratatouille\"\n\n")
+            print("Director \nThis key will access the field Director \nExample: Directors == \"Quentin Tarantino\"\n\n")
+            print("Writer \nThis key will access the field Writer \nExample: Writers == \"Christopher Nolan\"\n\n")
+            print("Genre \nThis key will access the field Genre \nExample: Genre == \"Comedy\"\n\n")
             print("Duration \nThis key will access the field duration(min) with conjunction of comparison operators \nExample: Duration > \"90\"\n\n")
             print("Release Date \nThis key will access the field Release Date(year) with conjunction of comparison operators \nExample: Release Date < \"2000\"\n\n")
             print("Rating \nThis key will access the field Rating with conjunction of comparison operators \nExample: Rating == \"9\"\n\n")
             print("Key Words: \n")
-            print("OF \nThis key word will find a specific attribute of a movie\nExample: Director OF \"Ratatouille\"\n\n")
-            print("AND \nThis key word will find multiple specified attributes of a movie with \nExample: Director AND Duration OF \"Ratatouille\"\n\n")
+            print("OF \nThis key word will find a specific attribute of a movie\nExample: Directors OF \"Ratatouille\"\n\n")
+            print("AND \nThis key word will find multiple specified attributes of a movie with \nExample: Directors AND Duration OF \"Ratatouille\"\n\n")
             
         elif sentence == "quit":
             break
