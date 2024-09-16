@@ -47,7 +47,7 @@ def find_query(query, connect):
         queryResult = []
 
         # keywords for fields
-        keywords = ["director", "title", "genre", "duration", "rating", "writer", "release date"]
+        keywords = ["directors", "title", "genre", "duration", "rating", "writer", "release date"]
         
         # if first token is in the keywords continue, else try again
         if (query[0] in keywords):
@@ -106,10 +106,10 @@ if __name__ == "__main__":
             # This is the Help Menu, with examples of what the expected input should be 
             print("Help Menu:\n\n")
             print("Help \nThis key will let you access this help menu\nExample: Help\n\n")
-            print("Title \nThis key will access the field title \nExample: Title = \"Ratatouille\"\n\n")
-            print("Director \nThis key will access the field Director \nExample: Director = \"Quentin Tarantino\"\n\n")
-            print("Writer \nThis key will access the field Writer \nExample: Writer = \"Christopher Nolan\"\n\n")
-            print("Genre \nThis key will access the field Genre \nExample: Genre = \"Comedy\"\n\n")
+            print("Title \nThis key will access the field title \nExample: Title == \"Ratatouille\"\n\n")
+            print("Directors \nThis key will access the field Director \nExample: Directors == \"Quentin Tarantino\"\n\n")
+            print("Writer \nThis key will access the field Writer \nExample: Writer == \"Christopher Nolan\"\n\n")
+            print("Genre \nThis key will access the field Genre \nExample: Genre == \"Comedy\"\n\n")
             print("Duration \nThis key will access the field duration(min) with conjunction of comparison operators \nExample: Duration > \"90\"\n\n")
             print("Release Date \nThis key will access the field Release Date(year) with conjunction of comparison operators \nExample: Release Date < \"2000\"\n\n")
             print("Rating \nThis key will access the field Rating with conjunction of comparison operators \nExample: Rating == \"9\"\n\n")
