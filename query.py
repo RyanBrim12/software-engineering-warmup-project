@@ -41,11 +41,9 @@ def tokenize(sentence):
 # Find the symbol used in the query to correctly call get from firebase, return collection
 
 def find_query(query, connect):
+    queryResult = []
     # IF query is length 3, example: "title, "==", "tenet", contiue else print try again
     if (len(query) == 3):
-
-        
-        queryResult = []
 
         # keywords for fields
         keywords = ["directors", "title", "genre", "duration", "rating", "writers", "release date"]
@@ -62,7 +60,7 @@ def find_query(query, connect):
                 # if query operator is of 
                 if( query[1] == "of"):
 
-                    queryCheck = connect.complete_query("title", "==", query[2])
+                    queryCheck = connect.complete_query("title", "==", query[2].capitalize())
 
                     if ((len(queryCheck)) > 0):
 
@@ -99,15 +97,15 @@ def find_query(query, connect):
                         print(f"Cannot use \"{query[1]}\" with keyword: {query[0]}")
                     
                     elif( query[1] == "of"):
-                        queryResult = connect.complete_query("title", "==", query[2])
+                        queryResult = connect.complete_query("title", "==", query[2].capitalize())
 
                     else:
 
-                        queryResult = connect.complete_query(query[0], query[1], query[2])
+                        queryResult = connect.complete_query(query[0], query[1], query[2].capitalize())
                 
                 #  else complete query
                 else:
-                    queryResult = connect.complete_query(query[0], query[1], query[2])
+                    queryResult = connect.complete_query(query[0], query[1], query[2].capitalize())
                 
             else:
                 print(f"{query[1]}: not a comparrison opperator in the system\nTry again or type Help for examples\n\n")
