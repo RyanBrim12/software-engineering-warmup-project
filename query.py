@@ -43,6 +43,7 @@ def tokenize(sentence):
 def find_query(query, connect):
     # IF query is length 3, example: "title, "==", "tenet", contiue else print try again
     if (len(query) == 3):
+
         
         queryResult = []
 
@@ -65,9 +66,26 @@ def find_query(query, connect):
 
                     if ((len(queryCheck)) > 0):
 
-                        for i in queryCheck:
-
-                            queryResult = i.query[0]
+                        if (query[0] == "directors"):
+                        
+                            queryResult.append(queryCheck[0].directors)
+                        elif (query[0] == "writers"):
+                        
+                            queryResult = queryCheck[0].writers
+                        elif (query[0] == "genre"):
+                        
+                            queryResult.append(queryCheck[0].genre)
+                        elif (query[0] == "duration"):
+                        
+                            queryResult.append(queryCheck[0].duration)
+                        elif (query[0] == "rating"):
+                        
+                            queryResult.append(queryCheck[0].rating)
+                        elif (query[0] == "release_date"):
+                        
+                            queryResult.append(queryCheck[0].release_date)
+                        else:
+                            queryResult = []
 
                         
 
@@ -76,7 +94,7 @@ def find_query(query, connect):
                 elif ( query[0] != "duration" and query[0] != "rating" and query[0] != "release date"):
 
                     # check if comparison is not < > >= <=
-                    if (query[1] != "==" or query[1] != "of"):
+                    if (query[1] != "==" and query[1] != "of"):
 
                         print(f"Cannot use \"{query[1]}\" with keyword: {query[0]}")
                     
