@@ -61,7 +61,16 @@ def find_query(query, connect):
                 # if query operator is of 
                 if( query[1] == "of"):
 
-                    queryResult = connect.complete_query("title", "==", query[2])
+                    queryCheck = connect.complete_query("title", "==", query[2])
+
+                    if ((len(queryCheck)) > 0):
+
+                        for i in queryCheck:
+
+                            queryResult = i.query[0]
+
+                        
+
 
                 # check if keyword isn't an integer variable
                 elif ( query[0] != "duration" and query[0] != "rating" and query[0] != "release date"):
