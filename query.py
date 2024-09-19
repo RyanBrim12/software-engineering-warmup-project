@@ -46,7 +46,7 @@ def find_query(query, connect):
     if (len(query) == 3):
 
         # keywords for fields
-        keywords = ["directors", "title", "genre", "duration", "rating", "writers", "release date"]
+        keywords = ["directors", "title", "genre", "duration", "rating", "writers", "release_date"]
         
         # if first token is in the keywords continue, else try again
         if (query[0] in keywords):
@@ -69,7 +69,7 @@ def find_query(query, connect):
                             queryResult.append(queryCheck[0].directors)
                         elif (query[0] == "writers"):
                         
-                            queryResult = queryCheck[0].writers
+                            queryResult.append(queryCheck[0].writers)
                         elif (query[0] == "genre"):
                         
                             queryResult.append(queryCheck[0].genre)
@@ -83,25 +83,26 @@ def find_query(query, connect):
                         
                             queryResult.append(queryCheck[0].release_date)
                         else:
-                            queryResult = []
+                            queryResult = None
 
                         
 
 
                 # check if keyword isn't an integer variable
-                elif ( query[0] != "duration" and query[0] != "rating" and query[0] != "release date"):
+                elif ( query[0] == "duration" or query[0] == "rating" or query[0] == "release_date"):
 
+                    if (query[1] == ">" or query[1] == ">=" or  query[1] == "<" or  query[1] == "<=" or query[1] == "=="):
+
+                        queryResult = connect.complete_query(query[0], query[1], float (query[2]))
+                        
                     # check if comparison is not < > >= <=
-                    if (query[1] != "==" and query[1] != "of"):
-
-                        print(f"Cannot use \"{query[1]}\" with keyword: {query[0]}")
-                    
-                    elif( query[1] == "of"):
-                        queryResult = connect.complete_query("title", "==", query[2].capitalize())
-
                     else:
 
-                        queryResult = connect.complete_query(query[0], query[1], query[2].capitalize())
+                        print(f"Cannot use \"{query[1]}\" with keyword: {query[0]}")
+                        queryResult = None
+
+
+                    
                 
                 #  else complete query
                 else:
@@ -109,13 +110,16 @@ def find_query(query, connect):
                 
             else:
                 print(f"{query[1]}: not a comparrison opperator in the system\nTry again or type Help for examples\n\n")
+                queryResult = None
 
         else:
             print(f"{query[0]}: not a field in the system\nTry again or type Help for examples\n\n")
+            queryResult = None
 
     else:
 	
         print ("Query input of wrong size! Try again or type Help for examples\n\n")
+        queryResult = None
     
     return queryResult
 
@@ -143,7 +147,7 @@ if __name__ == "__main__":
             print("Rating \nThis key will access the field Rating with conjunction of comparison operators \nExample: Rating == \"9\"\n\n")
             print("Key Words: \n")
             print("OF \nThis key word will find a specific attribute of a movie\nExample: Directors OF \"Ratatouille\"\n\n")
-            print("AND \nThis key word will find multiple specified attributes of a movie with \nExample: Directors AND Duration OF \"Ratatouille\"\n\n")
+            print("AND \nThis key word will find multiple specified attributes of a movie with \nExample: Directors == Christopher Nolan And Duration >\"50\"\n\n")
             
         elif sentence == "quit":
             break
@@ -169,13 +173,19 @@ if __name__ == "__main__":
 
             # Call 2 seperate functions for each side of and
             result1 = find_query(list_before_and, firebaseConnect)
+            print (result1)
             result2 = find_query(list_after_and, firebaseConnect)
+            print(result2)
 
             # Find intersection
             result = [item for item in result1 if item in result2]
 
-            if(len(result) == 0):
-                print ("Query Not Found, Try Again!")
+            if(result == None):
+                continue
+            
+            elif(len(result) == 0):
+                
+                print(f"\"{tokenized[2]}\" not found with keyword: {tokenized[0]}")
             
             else:
 
@@ -199,8 +209,12 @@ if __name__ == "__main__":
             # Find union
             result = list(result1.symmetric_difference(result2))
 
-            if(len(result) == 0):
-                print ("Query Not Found, Try Again!")
+            if(result == None):
+                continue
+
+            elif(len(result) == 0):
+
+                print(f"\"{tokenized[2]}\" not found with keyword: {tokenized[0]}")
             
             else:
 
@@ -213,8 +227,11 @@ if __name__ == "__main__":
             # Call function for corresponding query
             result = find_query(tokenized, firebaseConnect)
 
-            if(len(result) == 0):
-                print ("Query Not Found, Try Again!")
+            if(result == None):
+                continue
+            
+            elif(len(result) == 0):
+                print(f"\"{tokenized[2]}\" not found with keyword: {tokenized[0]}")
             
             else:
 
