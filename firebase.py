@@ -18,9 +18,9 @@ class Movie:
     
     def __repr__(self) -> str:
         return (f"Title: {self.title}\nRelease Date: {self.release_date}\n"
-                f"Rating: {self.rating}\nDirectors: {self.director}\n"
-                f"Writers: {self.writer}\nDuration: {self.duration}\n"
-                f"Genres: {self.genre}")
+                f"Rating: {self.rating}\nDirector: {self.director}\n"
+                f"Writer: {self.writer}\nDuration: {self.duration}\n"
+                f"Genre: {self.genre}")
 
 
 class FirebaseConnection:
