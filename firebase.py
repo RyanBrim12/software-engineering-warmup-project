@@ -38,9 +38,9 @@ class FirebaseConnection:
         for m in results:
             m_dict = m.to_dict()
             movies.append(Movie(None, m_dict["title"],
-                            m_dict["release"], m_dict["rating"],
-                            m_dict["directors"], m_dict["writers"],
-                            m_dict["duration"], m_dict["genres"]))
+                            m_dict["release_date"], m_dict["rating"],
+                            m_dict["director"], m_dict["writer"],
+                            m_dict["duration"], m_dict["genre"]))
         return movies
 
 
@@ -62,7 +62,7 @@ class FirebaseConnection:
     def create_collection(self, movies):
         for m in movies:
             doc_ref = self.client_connection.document(m.id)
-            doc_ref.set({"title": m.title, "release": m.release_date,
+            doc_ref.set({"title": m.title, "release_date": m.release_date,
                          "rating": m.rating, "director": m.directors,
                          "writer": m.writers, "duration": m.duration,
                          "genre": m.genres})
