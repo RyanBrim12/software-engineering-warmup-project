@@ -4,9 +4,8 @@ from firebase_admin import firestore
 from google.cloud.firestore_v1.base_query import FieldFilter
 
 class Movie:
-    def __init__(self, id, title, release, rating,
+    def __init__(self, title, release, rating,
                  director, writer, duration, genre) -> None:
-        self.id = id
         self.title = title
         self.release = release
         self.rating = rating
@@ -18,9 +17,9 @@ class Movie:
     
     @staticmethod
     def from_dict(dict):
-        return Movie(str(dict["id"]), dict["title"], dict["release"],
-                     dict["rating"], dict["director"], dict["writer"],
-                     dict["duration"], dict["genre"])
+        return Movie(dict["title"], dict["release"], dict["rating"],
+                     dict["director"], dict["writer"], dict["duration"],
+                     dict["genre"])
 
 
     def __repr__(self) -> str:
@@ -62,9 +61,9 @@ class FirebaseConnection:
             return self.delete_collection(batch_size)
 
 
-    def create_collection(self, movies):
-        for m in movies:
-            doc_ref = self.client_connection.document(m.id)
+    def create_collection(self, movies: dict[str, Movie]):
+        for id, m in movies.items():
+            doc_ref = self.client_connection.document(id)
             doc_ref.set({"title": m.title, "release": m.release,
                          "rating": m.rating, "director": m.director,
                          "writer": m.writer, "duration": m.duration,

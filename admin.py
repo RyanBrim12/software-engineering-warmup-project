@@ -5,9 +5,9 @@ from firebase import FirebaseConnection, Movie
 def get_movies_from_file(file_name):
     with open(file_name) as f:
         file_contents = json.load(f)
-    movies = []
+    movies = {}
     for movie in file_contents:
-        movies.append(Movie.from_dict(movie))
+        movies[str(movie["id"])] = Movie.from_dict(movie)
     return movies
 
 
