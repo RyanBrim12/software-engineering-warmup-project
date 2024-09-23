@@ -5,22 +5,22 @@ from google.cloud.firestore_v1.base_query import FieldFilter
 
 class Movie:
     def __init__(self, id, title, release_date, rating,
-                 directors, writers, duration, genres) -> None:
+                 director, writer, duration, genre) -> None:
         self.id = id
         self.title = title
         self.release_date = release_date
         self.rating = rating
-        self.directors = directors
-        self.writers = writers
+        self.director = director
+        self.writer = writer
         self.duration = duration
-        self.genres = genres
+        self.genre = genre
 
     
     def __repr__(self) -> str:
         return (f"Title: {self.title}\nRelease Date: {self.release_date}\n"
-                f"Rating: {self.rating}\nDirectors: {self.directors}\n"
-                f"Writers: {self.writers}\nDuration: {self.duration}\n"
-                f"Genres: {self.genres}")
+                f"Rating: {self.rating}\nDirectors: {self.director}\n"
+                f"Writers: {self.writer}\nDuration: {self.duration}\n"
+                f"Genres: {self.genre}")
 
 
 class FirebaseConnection:
