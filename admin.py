@@ -18,6 +18,6 @@ if __name__ == "__main__":
     fb = FirebaseConnection("movies")
     movies = get_movies_from_file("movies.json")
     fb.delete_collection(len(movies))
-    print("Deleted old documents")
+    print("Deleted old collection")
     fb.create_collection(movies)
-    print("Created new documents")
+    print("Created new collection")
