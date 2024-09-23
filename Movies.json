@@ -4,10 +4,10 @@
     "Title": "Ratatouille",
     "Release Date": 2007,
     "Rating": 8.6,
-    "Directed by": "Brad Bird, Jan Pinkava",
-    "Written by": "Brad Bird, Jan Pinkava, Jim Capobianco, Emily Cook, Kathy Greenberg, Bob Peterson",
+    "Directed by": "Brad Bird",
+    "Written by": "Brad Bird",
     "Duration": 111,
-    "Genres": "Animation,Adventure,Comedy,Family,Fantasy"
+    "Genres": "Animation"
   },
   {
     "ID": 59,
@@ -15,9 +15,9 @@
     "Release Date": 1994,
     "Rating": 8.9,
     "Directed by": "Quentin Tarantino",
-    "Written by": "Quentin Tarantino, Roger Avary",
+    "Written by": "Quentin Tarantino",
     "Duration": 154,
-    "Genres": "Crime,Drama"
+    "Genres": "Crime"
   },
   {
     "ID": 5478,
@@ -27,7 +27,7 @@
     "Directed by": "Christopher Nolan",
     "Written by": "Christopher Nolan",
     "Duration": 150,
-    "Genres": "Action,Sci-Fi,Thriller"
+    "Genres": "Action"
   },
   {
     "ID": 275,
@@ -35,9 +35,9 @@
     "Release Date": 2023,
     "Rating": 8.5,
     "Directed by": "Christopher Nolan",
-    "Written by": "Christopher Nolan, Kai Bird, Martin Sherwin",
+    "Written by": "Christopher Nolan",
     "Duration": 180,
-    "Genres": "Biography,Drama,History"
+    "Genres": "Biography"
   },
   {
     "ID": 3529,
@@ -47,7 +47,7 @@
     "Directed by": "Christopher Nolan",
     "Written by": "Christopher Nolan",
     "Duration": 148,
-    "Genres": "Action,Adventure,Sci-Fi,Thriller"
+    "Genres": "Action"
   },
   {
     "ID": 3650,
@@ -55,9 +55,9 @@
     "Release Date": 2014,
     "Rating": 8.8,
     "Directed by": "Christopher Nolan",
-    "Written by": "Jonathan Nolan, Christopher Nolan",
+    "Written by": "Jonathan Nolan",
     "Duration": 169,
-    "Genres": "Adventure,Drama,Sci-Fi"
+    "Genres": "Adventure"
   },
   {
     "ID": 5577,
@@ -65,9 +65,9 @@
     "Release Date": 2003,
     "Rating": 8.8,
     "Directed by": "Quentin Tarantino",
-    "Written by": "Quentin Tarantino, Uma Thurman",
+    "Written by": "Quentin Tarantino",
     "Duration": 111,
-    "Genres": "Action,Crime,Thriller"
+    "Genres": "Action"
   },
   {
     "ID": 1567,
@@ -77,7 +77,7 @@
     "Directed by": "Quentin Tarantino",
     "Written by": "Quentin Tarantino",
     "Duration": 165,
-    "Genres": "Comedy,Drama,Western"
+    "Genres": "Comedy"
   },
   {
     "ID": 1588,
@@ -85,9 +85,9 @@
     "Release Date": 1992,
     "Rating": 8.6,
     "Directed by": "Quentin Tarantino",
-    "Written by": "Quentin Tarantino, Roger Avary",
+    "Written by": "Quentin Tarantino",
     "Duration": 99,
-    "Genres": "Crime,Thriller"
+    "Genres": "Crime"
   },
   {
     "ID": 175,
@@ -95,9 +95,9 @@
     "Release Date": 1990,
     "Rating": 8.7,
     "Directed by": "Martin Scorsese",
-    "Written by": "Nicholas Pileggi, Martin Scorsese",
+    "Written by": "Nicholas Pileggi",
     "Duration": 146,
-    "Genres": "Biography,Crime,Drama"
+    "Genres": "Biography"
   },
   {
     "ID": 7908,
@@ -105,9 +105,9 @@
     "Release Date": 2010,
     "Rating": 8.7,
     "Directed by": "Martin Scorsese",
-    "Written by": "Laeta Kalogridis, Dennis Lehane",
+    "Written by": "Laeta Kalogridis",
     "Duration": 138,
-    "Genres": "Drama,Mystery,Thriller"
+    "Genres": "Drama"
   },
   {
     "ID": 308,
@@ -115,9 +115,9 @@
     "Release Date": 2023,
     "Rating": 7.6,
     "Directed by": "Martin Scorsese",
-    "Written by": "Eric Roth, Martin Scorsese, David Grann",
+    "Written by": "Eric Roth",
     "Duration": 206,
-    "Genres": "Crime,Drama,History,Mystery,Romance,Western"
+    "Genres": "Crime"
   },
   {
     "ID": 235,
@@ -127,7 +127,7 @@
     "Directed by": "Steven Spielberg",
     "Written by": "Robert Rodat",
     "Duration": 169,
-    "Genres": "Drama,War"
+    "Genres": "Drama"
   },
   {
     "ID": 5982,
@@ -135,9 +135,9 @@
     "Release Date": 1993,
     "Rating": 8.8,
     "Directed by": "Steven Spielberg",
-    "Written by": "Michael Crichton, David Koepp",
+    "Written by": "Michael Crichton",
     "Duration": 127,
-    "Genres": "Action,Adventure,Sci-Fi,Thriller"
+    "Genres": "Action"
   },
   {
     "ID": 484,
@@ -145,9 +145,9 @@
     "Release Date": 1975,
     "Rating": 8.5,
     "Directed by": "Steven Spielberg",
-    "Written by": "Peter Benchley, Carl Gottlieb",
+    "Written by": "Peter Benchley",
     "Duration": 124,
-    "Genres": "Adventure,Drama,Thriller"
+    "Genres": "Adventure"
   },
   {
     "ID": 7012,
@@ -155,9 +155,9 @@
     "Release Date": 2008,
     "Rating": 5.8,
     "Directed by": "Steven Spielberg",
-    "Written by": "David Koepp, George Lucas, Jeff Nathanson, Philip Kaufman",
+    "Written by": "David Koepp",
     "Duration": 122,
-    "Genres": "Action,Adventure"
+    "Genres": "Action"
   },
   {
     "ID": 2238,
@@ -165,9 +165,9 @@
     "Release Date": 1987,
     "Rating": 7.4,
     "Directed by": "Stanley Kubrick",
-    "Written by": "Stanley Kubrick, Michael Herr, Gustav Hasford",
+    "Written by": "Stanley Kubrick",
     "Duration": 116,
-    "Genres": "Drama,War"
+    "Genres": "Drama"
   },
   {
     "ID": 2506,
@@ -175,9 +175,9 @@
     "Release Date": 1971,
     "Rating": 7.3,
     "Directed by": "Stanley Kubrick",
-    "Written by": "Stanley Kubrick, Anthony Burgess",
+    "Written by": "Stanley Kubrick",
     "Duration": 136,
-    "Genres": "Crime,Sci-Fi"
+    "Genres": "Crime"
   },
   {
     "ID": 5466,
@@ -185,9 +185,9 @@
     "Release Date": 1999,
     "Rating": 5.9,
     "Directed by": "Stanley Kubrick",
-    "Written by": "Stanley Kubrick, Frederic Raphael, Arthur Schnitzler",
+    "Written by": "Stanley Kubrick",
     "Duration": 159,
-    "Genres": "Drama,Mystery,Thriller"
+    "Genres": "Drama"
   },
   {
     "ID": 3019,
@@ -197,7 +197,7 @@
     "Directed by": "Liz Garbus",
     "Written by": "",
     "Duration": 93,
-    "Genres": "Documentary,Biography,History,Sport"
+    "Genres": "Documentary"
   },
   {
     "ID": 177,
@@ -207,7 +207,7 @@
     "Directed by": "Joshua Oppenheimer",
     "Written by": "",
     "Duration": 103,
-    "Genres": "Documentary,Biography,History"
+    "Genres": "Documentary"
   },
   {
     "ID": 432,
@@ -217,7 +217,7 @@
     "Directed by": "Todd Douglas Miller",
     "Written by": "",
     "Duration": 93,
-    "Genres": "Documentary,History"
+    "Genres": "Documentary"
   },
   {
     "ID": 7776,
@@ -227,17 +227,17 @@
     "Directed by": "Nick Broomfield",
     "Written by": "",
     "Duration": 108,
-    "Genres": "Documentary,Biography,Crime,Music"
+    "Genres": "Documentary"
   },
   {
     "ID": 9735,
     "Title": "Katy Perry: Part of Me",
     "Release Date": 2012,
     "Rating": 7.3,
-    "Directed by": "Dan Cutforth, Jane Lipsitz",
+    "Directed by": "Dan Cutforth",
     "Written by": "",
     "Duration": 93,
-    "Genres": "Documentary,Biography,Music"
+    "Genres": "Documentary"
   },
   {
     "ID": 6805,
@@ -247,7 +247,7 @@
     "Directed by": "Jeff Malmberg",
     "Written by": "",
     "Duration": 89,
-    "Genres": "Documentary,Biography"
+    "Genres": "Documentary"
   },
   {
     "ID": 9079,
@@ -257,7 +257,7 @@
     "Directed by": "Billy Corben",
     "Written by": "",
     "Duration": 118,
-    "Genres": "Documentary,Crime,History"
+    "Genres": "Documentary"
   },
   {
     "ID": 1231,
@@ -267,14 +267,14 @@
     "Directed by": "Sam Wrench",
     "Written by": "",
     "Duration": 160,
-    "Genres": "Documentary,Music"
+    "Genres": "Documentary"
   },
   {
     "ID": 3972,
     "Title": "Bill Nye: Science Guy",
     "Release Date": 2017,
     "Rating": 6.6,
-    "Directed by": "David Alvarado, Jason Sussberg",
+    "Directed by": "David Alvarado",
     "Written by": "",
     "Duration": 101,
     "Genres": "Documentary"
@@ -297,27 +297,27 @@
     "Directed by": "Gavin O'Connor",
     "Written by": "Eric Guggenheim",
     "Duration": 135,
-    "Genres": "Biography,Drama,History,Sport"
+    "Genres": "Biography"
   },
   {
     "ID": 4667,
     "Title": "22 Jump Street",
     "Release Date": 2014,
     "Rating": 8,
-    "Directed by": "Phil Lord, Christopher Miller",
-    "Written by": "Michael Bacall, Oren Uziel, Rodney Rothman, Jonah Hill",
+    "Directed by": "Phil Lord",
+    "Written by": "Michael Bacall",
     "Duration": 112,
-    "Genres": "Action,Comedy,Crime"
+    "Genres": "Action"
   },
   {
     "ID": 5543,
     "Title": "21 Jump Street",
     "Release Date": 2012,
     "Rating": 7.9,
-    "Directed by": "Phil Lord, Christopher Miller",
-    "Written by": "Michael Bacall, Jonah Hill, Patrick Hasburgh, Stephen J. Cannell",
+    "Directed by": "Phil Lord",
+    "Written by": "Michael Bacall",
     "Duration": 109,
-    "Genres": "Action,Comedy,Crime"
+    "Genres": "Action"
   }
 ]
 
