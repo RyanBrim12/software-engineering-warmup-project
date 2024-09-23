@@ -4,11 +4,11 @@ from firebase_admin import firestore
 from google.cloud.firestore_v1.base_query import FieldFilter
 
 class Movie:
-    def __init__(self, id, title, release_date, rating,
+    def __init__(self, id, title, release, rating,
                  director, writer, duration, genre) -> None:
         self.id = id
         self.title = title
-        self.release_date = release_date
+        self.release = release
         self.rating = rating
         self.director = director
         self.writer = writer
@@ -16,8 +16,15 @@ class Movie:
         self.genre = genre
 
     
+    @staticmethod
+    def from_dict(dict):
+        return Movie(str(dict["id"]), dict["title"], dict["release"],
+                     dict["rating"], dict["director"], dict["writer"],
+                     dict["duration"], dict["genre"])
+
+
     def __repr__(self) -> str:
-        return (f"Title: {self.title}\nRelease Date: {self.release_date}\n"
+        return (f"Title: {self.title}\nRelease Date: {self.release}\n"
                 f"Rating: {self.rating}\nDirector: {self.director}\n"
                 f"Writer: {self.writer}\nDuration: {self.duration}\n"
                 f"Genre: {self.genre}")
@@ -36,11 +43,7 @@ class FirebaseConnection:
         results = query.stream()
         movies = []
         for m in results:
-            m_dict = m.to_dict()
-            movies.append(Movie(None, m_dict["title"],
-                            m_dict["release_date"], m_dict["rating"],
-                            m_dict["director"], m_dict["writer"],
-                            m_dict["duration"], m_dict["genre"]))
+            movies.append(Movie.from_dict(m.to_dict()))
         return movies
 
 
@@ -62,10 +65,10 @@ class FirebaseConnection:
     def create_collection(self, movies):
         for m in movies:
             doc_ref = self.client_connection.document(m.id)
-            doc_ref.set({"title": m.title, "release_date": m.release_date,
-                         "rating": m.rating, "director": m.directors,
-                         "writer": m.writers, "duration": m.duration,
-                         "genre": m.genres})
+            doc_ref.set({"title": m.title, "release": m.release,
+                         "rating": m.rating, "director": m.director,
+                         "writer": m.writer, "duration": m.duration,
+                         "genre": m.genre})
             
 
 if __name__ == "__main__":

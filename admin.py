@@ -7,10 +7,7 @@ def get_movies_from_file(file_name):
         file_contents = json.load(f)
     movies = []
     for movie in file_contents:
-        movies.append(Movie(str(movie["ID"]), movie["Title"],
-                            movie["Release Date"], movie["Rating"],
-                            movie["Directed by"], movie["Written by"],
-                            movie["Duration"], movie["Genres"]))
+        movies.append(Movie.from_dict(movie))
     return movies
 
 
