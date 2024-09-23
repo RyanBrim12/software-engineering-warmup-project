@@ -25,7 +25,7 @@ class Movie:
 
 class FirebaseConnection:
     def __init__(self, collection_name) -> None:
-        cred = credentials.Certificate('serviceAccountKey.json')
+        cred = credentials.Certificate("teamOneServiceAccountKey.json")
         firebase_admin.initialize_app(cred)
         self.client_connection = firestore.client().collection(collection_name)
 
