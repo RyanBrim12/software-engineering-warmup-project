@@ -63,9 +63,9 @@ class FirebaseConnection:
         for m in movies:
             doc_ref = self.client_connection.document(m.id)
             doc_ref.set({"title": m.title, "release": m.release_date,
-                         "rating": m.rating, "directors": m.directors,
-                         "writers": m.writers, "duration": m.duration,
-                         "genres": m.genres})
+                         "rating": m.rating, "director": m.directors,
+                         "writer": m.writers, "duration": m.duration,
+                         "genre": m.genres})
             
 
 if __name__ == "__main__":
