@@ -3,6 +3,9 @@ from firebase import FirebaseConnection, Movie
 
 
 def get_movies_from_file(file_name):
+    """
+    Reads in movie information from a json file and creates Movie objects.
+    """
     with open(file_name) as f:
         file_contents = json.load(f)
     movies = {}

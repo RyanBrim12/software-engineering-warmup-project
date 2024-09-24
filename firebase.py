@@ -5,22 +5,11 @@ from google.cloud.firestore_v1.base_query import FieldFilter
 
 class Movie:
     """Class that describes a movie."""
-    def __init__(self, title, release, rating,
+    def __init__(self, title, year, rating,
                  director, writer, duration, genre) -> None:
-        """
-        Initializes the instance based on given data.
-
-        Args:
-            title (str): The title of the movie.
-            release (int): The year the movie was released.
-            rating (float): The decimal rating of the movie; between 0 and 10.
-            director (str): The director of the movie.
-            writer (str): The writer of the movie.
-            duration (int): The duration of the movie in minutes.
-            genre (str): The genre of the movie.
-        """
+        """Initializes the instance based on given data."""
         self.title = title
-        self.release = release
+        self.year = year
         self.rating = rating
         self.director = director
         self.writer = writer
@@ -30,13 +19,8 @@ class Movie:
     
     @staticmethod
     def from_dict(movie_dict):
-        """
-        Creates a Movie object with the data in the given dict.
-
-        Args:
-            movie_dict (dict[str]])
-        """
-        return Movie(movie_dict["title"], movie_dict["release"],
+        """Creates a Movie object with the data in the given dict."""
+        return Movie(movie_dict["title"], movie_dict["year"],
                      movie_dict["rating"], movie_dict["director"],
                      movie_dict["writer"], movie_dict["duration"],
                      movie_dict["genre"])
@@ -47,7 +31,7 @@ class Movie:
 
 
     def __repr__(self) -> str:
-        return (f"Title: {self.title}\nRelease Date: {self.release}\n"
+        return (f"Title: {self.title}\nYear: {self.year}\n"
                 f"Rating: {self.rating}\nDirector: {self.director}\n"
                 f"Writer: {self.writer}\nDuration: {self.duration}\n"
                 f"Genre: {self.genre}")
@@ -88,7 +72,7 @@ class FirebaseConnection:
     def create_collection(self, movies: dict[str, Movie]):
         for id, m in movies.items():
             doc_ref = self.client_connection.document(id)
-            doc_ref.set({"title": m.title, "release": m.release,
+            doc_ref.set({"title": m.title, "year": m.year,
                          "rating": m.rating, "director": m.director,
                          "writer": m.writer, "duration": m.duration,
                          "genre": m.genre})
