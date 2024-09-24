@@ -46,7 +46,7 @@ def find_query(query, connect):
     if (len(query) == 3):
 
         # keywords for fields
-        keywords = ["directors", "title", "genre", "duration", "rating", "writers", "release_date"]
+        keywords = ["director", "title", "genre", "duration", "rating", "writer", "release_date"]
         
         # if first token is in the keywords continue, else try again
         if (query[0] in keywords):
@@ -64,10 +64,10 @@ def find_query(query, connect):
 
                     if ((len(query_check)) > 0):
 
-                        if (query[0] == "directors"):
+                        if (query[0] == "director"):
                         
                             query_result.append(query_check[0].directors)
-                        elif (query[0] == "writers"):
+                        elif (query[0] == "writer"):
                         
                             query_result.append(query_check[0].writers)
                         elif (query[0] == "genre"):
@@ -140,16 +140,16 @@ if __name__ == "__main__":
             print("Help Menu:\n\n")
             print("Help \nThis key will let you access this help menu\nExample: Help\n\n")
             print("Title \nThis key will access the field title \nExample: Title == \"Ratatouille\"\n\n")
-            print("Director \nThis key will access the field Director \nExample: Directors == \"Quentin Tarantino\"\n\n")
-            print("Writer \nThis key will access the field Writer \nExample: Writers == \"Christopher Nolan\"\n\n")
+            print("Director \nThis key will access the field Director \nExample: Director == \"Quentin Tarantino\"\n\n")
+            print("Writer \nThis key will access the field Writer \nExample: Writer == \"Christopher Nolan\"\n\n")
             print("Genre \nThis key will access the field Genre \nExample: Genre == \"Comedy\"\n\n")
             print("Duration \nThis key will access the field duration(min) with conjunction of comparison operators \nExample: Duration > \"90\"\n\n")
             print("Release Date \nThis key will access the field Release Date(year) with conjunction of comparison operators \nExample: Release Date < \"2000\"\n\n")
             print("Rating \nThis key will access the field Rating with conjunction of comparison operators \nExample: Rating == \"9\"\n\n")
             print("Key Words: \n")
-            print("OF \nThis key word will find a specific attribute of a movie\nExample: Directors OF \"Ratatouille\"\n\n")
-            print("AND \nThis key word will find multiple specified attributes of a movie with \nExample: Directors == Christopher Nolan And Duration >\"50\"\n\n")
-            
+            print("OF \nThis key word will find a specific attribute of a movie\nExample: Director OF \"Ratatouille\"\n\n")
+            print("AND \nThis key word will find multiple specified attributes of a movie with \nExample: Director == Christopher Nolan And Duration >\"50\"\n\n")
+            tokenized = ""
         elif sentence == "quit":
             break
         elif sentence.count('\"') % 2 != 0:
@@ -192,6 +192,9 @@ if __name__ == "__main__":
             else:
                 # Find intersection
                 result = [item for item in result1 if item in result2]
+                print (result1)
+                print (result2)
+                print (result)
 
                 if(result == None):
                     continue
@@ -199,7 +202,8 @@ if __name__ == "__main__":
                 # issus here! 
                 elif(len(result) == 0):
                 
-                    print(f"\"{tokenized[2]}\" not found with keyword: {tokenized[0]}")
+                     print(f"\"Query Not Found: {list_before_and[2]}\" not found with keyword: {list_before_and[0]} and {list_after_and[2]}\" not found with keyword: {list_after_and[0]}")
+
 
             
                 else:
@@ -239,8 +243,13 @@ if __name__ == "__main__":
                     print(r)
 
         else:
-            # Call function for corresponding query
-            result = find_query(tokenized, firebase_connect)
+            
+            result = None
+
+            if tokenized != "":
+
+                # Call function for corresponding query
+                result = find_query(tokenized, firebase_connect)
 
             if(result == None):
                 continue
