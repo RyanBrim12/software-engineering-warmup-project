@@ -4,28 +4,34 @@ from firebase_admin import firestore
 from google.cloud.firestore_v1.base_query import FieldFilter
 
 class Movie:
-    def __init__(self, id, title, release_date, rating,
-                 directors, writers, duration, genres) -> None:
-        self.id = id
+    def __init__(self, title, release, rating,
+                 director, writer, duration, genre) -> None:
         self.title = title
-        self.release_date = release_date
+        self.release = release
         self.rating = rating
-        self.directors = directors
-        self.writers = writers
+        self.director = director
+        self.writer = writer
         self.duration = duration
-        self.genres = genres
+        self.genre = genre
 
     
+    @staticmethod
+    def from_dict(dict):
+        return Movie(dict["title"], dict["release"], dict["rating"],
+                     dict["director"], dict["writer"], dict["duration"],
+                     dict["genre"])
+
+
     def __repr__(self) -> str:
-        return (f"Title: {self.title}\nRelease Date: {self.release_date}\n"
-                f"Rating: {self.rating}\nDirectors: {self.directors}\n"
-                f"Writers: {self.writers}\nDuration: {self.duration}\n"
-                f"Genres: {self.genres}")
+        return (f"Title: {self.title}\nRelease Date: {self.release}\n"
+                f"Rating: {self.rating}\nDirector: {self.director}\n"
+                f"Writer: {self.writer}\nDuration: {self.duration}\n"
+                f"Genre: {self.genre}")
 
 
 class FirebaseConnection:
     def __init__(self, collection_name) -> None:
-        cred = credentials.Certificate('serviceAccountKey.json')
+        cred = credentials.Certificate("teamOneServiceAccountKey.json")
         firebase_admin.initialize_app(cred)
         self.client_connection = firestore.client().collection(collection_name)
 
@@ -36,11 +42,7 @@ class FirebaseConnection:
         results = query.stream()
         movies = []
         for m in results:
-            m_dict = m.to_dict()
-            movies.append(Movie(None, m_dict["title"],
-                            m_dict["release"], m_dict["rating"],
-                            m_dict["directors"], m_dict["writers"],
-                            m_dict["duration"], m_dict["genres"]))
+            movies.append(Movie.from_dict(m.to_dict()))
         return movies
 
 
@@ -59,13 +61,13 @@ class FirebaseConnection:
             return self.delete_collection(batch_size)
 
 
-    def create_collection(self, movies):
-        for m in movies:
-            doc_ref = self.client_connection.document(m.id)
-            doc_ref.set({"title": m.title, "release": m.release_date,
-                         "rating": m.rating, "directors": m.directors,
-                         "writers": m.writers, "duration": m.duration,
-                         "genres": m.genres})
+    def create_collection(self, movies: dict[str, Movie]):
+        for id, m in movies.items():
+            doc_ref = self.client_connection.document(id)
+            doc_ref.set({"title": m.title, "release": m.release,
+                         "rating": m.rating, "director": m.director,
+                         "writer": m.writer, "duration": m.duration,
+                         "genre": m.genre})
             
 
 if __name__ == "__main__":

@@ -5,12 +5,9 @@ from firebase import FirebaseConnection, Movie
 def get_movies_from_file(file_name):
     with open(file_name) as f:
         file_contents = json.load(f)
-    movies = []
+    movies = {}
     for movie in file_contents:
-        movies.append(Movie(str(movie["ID"]), movie["Title"],
-                            movie["Release Date"], movie["Rating"],
-                            movie["Directed by"], movie["Written by"],
-                            movie["Duration"], movie["Genres"]))
+        movies[str(movie["id"])] = Movie.from_dict(movie)
     return movies
 
 
@@ -18,6 +15,6 @@ if __name__ == "__main__":
     fb = FirebaseConnection("movies")
     movies = get_movies_from_file("movies.json")
     fb.delete_collection(len(movies))
-    print("Deleted old documents")
+    print("Deleted old collection")
     fb.create_collection(movies)
-    print("Created new documents")
+    print("Created new collection")
