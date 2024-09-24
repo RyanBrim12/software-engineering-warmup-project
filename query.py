@@ -120,7 +120,9 @@ def find_query(query, connect):
                     if (query[1] == "=="):
                         query_search = connect.complete_query(query[0], query[1], query[2].title())
 
+
                         if(query[0] == "title"):
+                            
                             if query_search == []:
                                 print(f"No Results Found For: \"{query[0]} {query[1]} {query[2]} \"\nTry again or type Help for examples\n")
                                 query_result = None
