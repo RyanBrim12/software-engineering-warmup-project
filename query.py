@@ -97,7 +97,9 @@ def find_query(query, connect):
 
                     if (query[1] == ">" or query[1] == ">=" or  query[1] == "<" or  query[1] == "<=" or query[1] == "=="):
 
-                        query_result = connect.complete_query(query[0], query[1], float (query[2]))
+                        query_search = connect.complete_query(query[0], query[1], float (query[2]))
+                        for i in query_search:
+                            query_result.append(i.title)
                         
                     # check if comparison is not < > >= <=
                     else:
@@ -111,7 +113,12 @@ def find_query(query, connect):
                 #  else complete query
                 else:
                     if (query[1] == "=="):
-                        query_result = connect.complete_query(query[0], query[1], query[2].title())
+                        query_search = connect.complete_query(query[0], query[1], query[2].title())
+                        if(query[0] == "title"):
+                            query_result = query_search
+                        else:
+                            for i in query_search:
+                                query_result.append(i.title)
                     else:
                         print(f"Cannot use \"{query[1]}\" with keyword: {query[0]}")
                         query_result = None
@@ -166,7 +173,7 @@ if __name__ == "__main__":
         else:
             # Call tokenize function
             tokenized = tokenize(sentence)
-            print(tokenized)
+            
 
 
         # Perform query
@@ -182,7 +189,7 @@ if __name__ == "__main__":
 
             # Call 2 seperate functions for each side of and
             result1 = find_query(list_before_and, firebase_connect)
-            print (result1)
+            
             
             result2 = find_query(list_after_and, firebase_connect)
 
@@ -195,7 +202,7 @@ if __name__ == "__main__":
                 
 
             elif(result1 == [] and result2 == []):
-                print(f"\"{list_before_and[2]}\" not found with keyword: {list_before_and[0]} and {list_after_and[2]}\" not found with keyword: {list_after_and[0]}")
+                print(f"\"{list_before_and[2]}\" not found with keyword: {list_before_and[0]} and \"{list_after_and[2]}\" not found with keyword: {list_after_and[0]}")
 
             elif(result1 == None or result2 == None):
                 continue
@@ -203,9 +210,7 @@ if __name__ == "__main__":
             else:
                 # Find intersection
                 result = [item for item in result1 if item in result2]
-                print (result1)
-                print (result2)
-                print (result)
+                
 
                 if(result == None):
                     continue
@@ -213,8 +218,7 @@ if __name__ == "__main__":
                 # issus here! 
                 elif(len(result) == 0):
                 
-                     print(f"\"Query Not Found: {list_before_and[2]}\" not found with keyword: {list_before_and[0]} and {list_after_and[2]}\" not found with keyword: {list_after_and[0]}")
-
+                     print(f"Query Not Found: \"{list_before_and[2]}\" not found with keyword: {list_before_and[0]} and \"{list_after_and[2]}\" not found with keyword: {list_after_and[0]}")
 
             
                 else:
@@ -222,7 +226,7 @@ if __name__ == "__main__":
                     # Print Results
                     for r in result:
 
-                        print(r)
+                        print(f"{r}\n")
 
         else:
             
@@ -244,7 +248,7 @@ if __name__ == "__main__":
                 # Print Results
                 for r in result:
 
-                    print(r)
+                    print(f"{r}\n")
 
             
             
