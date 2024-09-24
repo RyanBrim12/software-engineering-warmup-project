@@ -46,7 +46,7 @@ def find_query(query, connect):
     if (len(query) == 3):
 
         # keywords for fields
-        keywords = ["director", "title", "genre", "duration", "rating", "writer", "release_date"]
+        keywords = ["director", "title", "genre", "duration", "rating", "writer", "year"]
         
         # if first token is in the keywords continue, else try again
         if (query[0] in keywords):
@@ -83,9 +83,9 @@ def find_query(query, connect):
                         elif (query[0] == "rating"):
                         
                             query_result.append(query_check[0].rating)
-                        elif (query[0] == "release_date"):
+                        elif (query[0] == "year"):
                         
-                            query_result.append(query_check[0].release_date)
+                            query_result.append(query_check[0].year)
                         else:
                             query_result = None
 
@@ -93,7 +93,7 @@ def find_query(query, connect):
 
 
                 # check if keyword isn't an integer variable
-                elif ( query[0] == "duration" or query[0] == "rating" or query[0] == "release_date"):
+                elif ( query[0] == "duration" or query[0] == "rating" or query[0] == "year"):
 
                     if (query[1] == ">" or query[1] == ">=" or  query[1] == "<" or  query[1] == "<=" or query[1] == "=="):
 
