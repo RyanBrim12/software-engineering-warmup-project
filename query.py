@@ -152,7 +152,7 @@ if __name__ == "__main__":
             print("Writer \nThis key will access the field Writer \nExample: Writer == \"Christopher Nolan\"\n\n")
             print("Genre \nThis key will access the field Genre \nExample: Genre == \"Comedy\"\n\n")
             print("Duration \nThis key will access the field duration(min) with conjunction of comparison operators \nExample: Duration > \"90\"\n\n")
-            print("Release Date \nThis key will access the field Release Date(year) with conjunction of comparison operators \nExample: Release Date < \"2000\"\n\n")
+            print("Year \nThis key will access the field year (the year the movie was released) with conjunction of comparison operators \nExample: year < \"2000\"\n\n")
             print("Rating \nThis key will access the field Rating with conjunction of comparison operators \nExample: Rating == \"9\"\n\n")
             print("Key Words: \n")
             print("OF \nThis key word will find a specific attribute of a movie\nExample: Director OF \"Ratatouille\"\n\n")
