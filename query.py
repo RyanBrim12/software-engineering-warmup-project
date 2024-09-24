@@ -1,5 +1,20 @@
 import firebase
 
+def help():
+     # This is the Help Menu, with examples of what the expected input should be 
+    print("Help Menu:\n\n")
+    print("Help \nThis key will let you access this help menu\nExample: Help\n\n")
+    print("Title \nThis key will access the field title \nExample: Title == \"Ratatouille\"\n\n")
+    print("Director \nThis key will access the field Director \nExample: Director == \"Quentin Tarantino\"\n\n")
+    print("Writer \nThis key will access the field Writer \nExample: Writer == \"Christopher Nolan\"\n\n")
+    print("Genre \nThis key will access the field Genre \nExample: Genre == \"Comedy\"\n\n")
+    print("Duration \nThis key will access the field duration(min) with conjunction of comparison operators \nExample: Duration > \"90\"\n\n")
+    print("Year \nThis key will access the field year (the year the movie was released) with conjunction of comparison operators \nExample: year < \"2000\"\n\n")
+    print("Rating \nThis key will access the field Rating with conjunction of comparison operators \nExample: Rating == \"9\"\n\n")
+    print("Key Words: \n")
+    print("OF \nThis key word will find a specific attribute of a movie\nExample: Director OF \"Ratatouille\"\n\n")
+    print("AND \nThis key word will find multiple specified attributes of a movie with \nExample: Director == Christopher Nolan And Duration >\"50\"\n\n")
+
 def tokenize(sentence):
     # Split the sentence into rough tokens
     tokens = sentence.split()  
@@ -122,7 +137,7 @@ def find_query(query, connect):
 
 
                         if(query[0] == "title"):
-                            
+
                             if query_search == []:
                                 print(f"No Results Found For: \"{query[0]} {query[1]} {query[2]} \"\nTry again or type Help for examples\n")
                                 query_result = None
@@ -167,20 +182,9 @@ if __name__ == "__main__":
     
         # Check input
         if sentence == "help":
-            # This is the Help Menu, with examples of what the expected input should be 
-            print("Help Menu:\n\n")
-            print("Help \nThis key will let you access this help menu\nExample: Help\n\n")
-            print("Title \nThis key will access the field title \nExample: Title == \"Ratatouille\"\n\n")
-            print("Director \nThis key will access the field Director \nExample: Director == \"Quentin Tarantino\"\n\n")
-            print("Writer \nThis key will access the field Writer \nExample: Writer == \"Christopher Nolan\"\n\n")
-            print("Genre \nThis key will access the field Genre \nExample: Genre == \"Comedy\"\n\n")
-            print("Duration \nThis key will access the field duration(min) with conjunction of comparison operators \nExample: Duration > \"90\"\n\n")
-            print("Year \nThis key will access the field year (the year the movie was released) with conjunction of comparison operators \nExample: year < \"2000\"\n\n")
-            print("Rating \nThis key will access the field Rating with conjunction of comparison operators \nExample: Rating == \"9\"\n\n")
-            print("Key Words: \n")
-            print("OF \nThis key word will find a specific attribute of a movie\nExample: Director OF \"Ratatouille\"\n\n")
-            print("AND \nThis key word will find multiple specified attributes of a movie with \nExample: Director == Christopher Nolan And Duration >\"50\"\n\n")
+            help()
             tokenized = ""
+
         elif sentence == "quit":
             break
         elif sentence.count('\"') % 2 != 0:
