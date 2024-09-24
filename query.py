@@ -100,7 +100,7 @@ def find_query(query, connect):
                         query_search = connect.complete_query(query[0], query[1], float (query[2]))
 
                         if query_search == []:
-                            print(f"\"{query[0]} {query[1]} {query[2]} \" no results found")
+                            print(f"\"No Results Found For: {query[0]} {query[1]} {query[2]} \"\nTry again or type Help for examples\n ")
                             query_result = None
 
                         for i in query_search:
@@ -121,12 +121,12 @@ def find_query(query, connect):
                         query_search = connect.complete_query(query[0], query[1], query[2].title())
 
                         if query_search == []:
-                            print(f"\"{query[0]} {query[1]} {query[2]} \" no results found")
+                            print(f"No Results Found For: \"{query[0]} {query[1]} {query[2]} \"\nTry again or type Help for examples\n")
                             query_result = None
 
                         if(query[0] == "title"):
                             if query_search == []:
-                                print(f"\"{query[0]} {query[1]} {query[2]} \" no results found")
+                                print(f"No Results Found For: \"{query[0]} {query[1]} {query[2]} \"\nTry again or type Help for examples\n")
                                 query_result = None
                             else:
                                 query_result = query_search
@@ -143,7 +143,7 @@ def find_query(query, connect):
                 query_result = None
 
         else:
-            print(f"{query[0]}: not a field in the system\nTry again or type Help for examples\n\n")
+            print(f"{query[0]}: not a keyword in the system\nTry again or type Help for examples\n\n")
             query_result = None
 
     else:
@@ -207,18 +207,8 @@ if __name__ == "__main__":
             
             result2 = find_query(list_after_and, firebase_connect)
 
-            if(result1 == [] and result2 != []):
-                print(f"\"{list_before_and[2]}\" not found with keyword: {list_before_and[0]}")
-                
-
-            elif(result1 != [] and result2 ==[]):
-                print(f"\"{list_after_and[2]}\" not found with keyword: {list_after_and[0]}")
-                
-
-            elif(result1 == [] and result2 == []):
-                print(f"\"{list_before_and[2]}\" not found with keyword: {list_before_and[0]} and \"{list_after_and[2]}\" not found with keyword: {list_after_and[0]}")
-
-            elif(result1 == None or result2 == None):
+           
+            if(result1 == None or result2 == None):
                 continue
 
             else:
