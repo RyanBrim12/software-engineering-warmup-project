@@ -41,7 +41,7 @@ def tokenize(sentence):
 # Find the symbol used in the query to correctly call get from firebase, return collection
 
 def find_query(query, connect):
-    queryResult = []
+    query_result = []
     # IF query is length 3, example: "title, "==", "tenet", contiue else print try again
     if (len(query) == 3):
 
@@ -52,38 +52,38 @@ def find_query(query, connect):
         if (query[0] in keywords):
 
             # comparison opperators list 
-            comparisonOpperators = [">", "<", ">=", "<=", "==", "of"]
+            comparison_opperators = [">", "<", ">=", "<=", "==", "of"]
 
             # if the 2nd token is in the list continue and send to corresponding functions else print try again
-            if (query[1] in comparisonOpperators):
+            if (query[1] in comparison_opperators):
                 
                 # if query operator is of 
                 if( query[1] == "of"):
 
-                    queryCheck = connect.complete_query("title", "==", query[2].capitalize())
+                    query_check = connect.complete_query("title", "==", query[2].title())
 
-                    if ((len(queryCheck)) > 0):
+                    if ((len(query_check)) > 0):
 
                         if (query[0] == "directors"):
                         
-                            queryResult.append(queryCheck[0].directors)
+                            query_result.append(query_check[0].directors)
                         elif (query[0] == "writers"):
                         
-                            queryResult.append(queryCheck[0].writers)
+                            query_result.append(query_check[0].writers)
                         elif (query[0] == "genre"):
                         
-                            queryResult.append(queryCheck[0].genre)
+                            query_result.append(query_check[0].genre)
                         elif (query[0] == "duration"):
                         
-                            queryResult.append(queryCheck[0].duration)
+                            query_result.append(query_check[0].duration)
                         elif (query[0] == "rating"):
                         
-                            queryResult.append(queryCheck[0].rating)
+                            query_result.append(query_check[0].rating)
                         elif (query[0] == "release_date"):
                         
-                            queryResult.append(queryCheck[0].release_date)
+                            query_result.append(query_check[0].release_date)
                         else:
-                            queryResult = None
+                            query_result = None
 
                         
 
@@ -93,41 +93,42 @@ def find_query(query, connect):
 
                     if (query[1] == ">" or query[1] == ">=" or  query[1] == "<" or  query[1] == "<=" or query[1] == "=="):
 
-                        queryResult = connect.complete_query(query[0], query[1], float (query[2]))
+                        query_result = connect.complete_query(query[0], query[1], float (query[2]))
                         
                     # check if comparison is not < > >= <=
                     else:
 
                         print(f"Cannot use \"{query[1]}\" with keyword: {query[0]}")
-                        queryResult = None
+                        query_result = None
 
 
                     
                 
                 #  else complete query
                 else:
-                    queryResult = connect.complete_query(query[0], query[1], query[2].capitalize())
+                    query_result = connect.complete_query(query[0], query[1], query[2].title())
+                    
                 
             else:
                 print(f"{query[1]}: not a comparrison opperator in the system\nTry again or type Help for examples\n\n")
-                queryResult = None
+                query_result = None
 
         else:
             print(f"{query[0]}: not a field in the system\nTry again or type Help for examples\n\n")
-            queryResult = None
+            query_result = None
 
     else:
 	
         print ("Query input of wrong size! Try again or type Help for examples\n\n")
-        queryResult = None
+        query_result = None
     
-    return queryResult
+    return query_result
 
 
 if __name__ == "__main__":
 
     # create instance of Firebase_Connection
-    firebaseConnect = firebase.FirebaseConnection("movies")
+    firebase_connect = firebase.FirebaseConnection("movies")
     
     while True:
         # Get user input
@@ -172,27 +173,41 @@ if __name__ == "__main__":
             list_after_and = tokenized[and_index+1:]
 
             # Call 2 seperate functions for each side of and
-            result1 = find_query(list_before_and, firebaseConnect)
+            result1 = find_query(list_before_and, firebase_connect)
             print (result1)
-            result2 = find_query(list_after_and, firebaseConnect)
-            print(result2)
-
-            # Find intersection
-            result = [item for item in result1 if item in result2]
-
-            if(result == None):
-                continue
             
-            elif(len(result) == 0):
+            result2 = find_query(list_after_and, firebase_connect)
+
+            if(result1 == [] and result2 != []):
+                print(f"\"{list_before_and[2]}\" not found with keyword: {list_before_and[0]}")
                 
-                print(f"\"{tokenized[2]}\" not found with keyword: {tokenized[0]}")
-            
+
+            elif(result1 != [] and result2 ==[]):
+                print(f"\"{list_after_and[2]}\" not found with keyword: {list_after_and[0]}")
+                
+
+            elif(result1 == [] and result2 == []):
+                print(f"\"{list_before_and[2]}\" not found with keyword: {list_before_and[0]} and {list_after_and[2]}\" not found with keyword: {list_after_and[0]}")
+
             else:
+                # Find intersection
+                result = [item for item in result1 if item in result2]
 
-                # Print Results
-                for r in result:
+                if(result == None):
+                    continue
+            
+                # issus here! 
+                elif(len(result) == 0):
+                
+                    print(f"\"{tokenized[2]}\" not found with keyword: {tokenized[0]}")
 
-                    print(r)
+            
+                else:
+
+                    # Print Results
+                    for r in result:
+
+                        print(r)
 
         elif "or" in tokenized:
             # Find the index of 'or'
@@ -203,8 +218,8 @@ if __name__ == "__main__":
             list_after_or = tokenized[and_index+1:]
 
             # Call 2 seperate functions for each side of 'of'
-            result1 = find_query(list_before_or, firebaseConnect)
-            result2 = find_query(list_after_or, firebaseConnect)
+            result1 = find_query(list_before_or, firebase_connect)
+            result2 = find_query(list_after_or, firebase_connect)
 
             # Find union
             result = list(result1.symmetric_difference(result2))
@@ -225,7 +240,7 @@ if __name__ == "__main__":
 
         else:
             # Call function for corresponding query
-            result = find_query(tokenized, firebaseConnect)
+            result = find_query(tokenized, firebase_connect)
 
             if(result == None):
                 continue
