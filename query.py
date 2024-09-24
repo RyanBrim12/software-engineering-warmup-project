@@ -70,10 +70,6 @@ def find_query(query, connect):
                         elif (query[0] == "writer"):
                         
                             query_result.append(query_check[0].writer)
-
-                            if(query_result == [""]):
-                                print(f"\"{query[0]}\" of {query[2].title()} not available")
-
                         elif (query[0] == "genre"):
                         
                             query_result.append(query_check[0].genre)
@@ -83,7 +79,7 @@ def find_query(query, connect):
                         elif (query[0] == "rating"):
                         
                             query_result.append(query_check[0].rating)
-                        elif (query[0] == "year"):
+                        elif (query[0] == "release_date"):
                         
                             query_result.append(query_check[0].year)
                         else:
@@ -93,7 +89,7 @@ def find_query(query, connect):
 
 
                 # check if keyword isn't an integer variable
-                elif ( query[0] == "duration" or query[0] == "rating" or query[0] == "year"):
+                elif ( query[0] == "duration" or query[0] == "rating" or query[0] == "release_date"):
 
                     if (query[1] == ">" or query[1] == ">=" or  query[1] == "<" or  query[1] == "<=" or query[1] == "=="):
 
@@ -110,11 +106,7 @@ def find_query(query, connect):
                 
                 #  else complete query
                 else:
-                    if (query[1] == "=="):
-                        query_result = connect.complete_query(query[0], query[1], query[2].title())
-                    else:
-                        print(f"Cannot use \"{query[1]}\" with keyword: {query[0]}")
-                        query_result = None
+                    query_result = connect.complete_query(query[0], query[1], query[2].title())
                     
                 
             else:
@@ -152,7 +144,7 @@ if __name__ == "__main__":
             print("Writer \nThis key will access the field Writer \nExample: Writer == \"Christopher Nolan\"\n\n")
             print("Genre \nThis key will access the field Genre \nExample: Genre == \"Comedy\"\n\n")
             print("Duration \nThis key will access the field duration(min) with conjunction of comparison operators \nExample: Duration > \"90\"\n\n")
-            print("Year \nThis key will access the field year (the year the movie was released) with conjunction of comparison operators \nExample: year < \"2000\"\n\n")
+            print("Release Date \nThis key will access the field Release Date(year) with conjunction of comparison operators \nExample: Release Date < \"2000\"\n\n")
             print("Rating \nThis key will access the field Rating with conjunction of comparison operators \nExample: Rating == \"9\"\n\n")
             print("Key Words: \n")
             print("OF \nThis key word will find a specific attribute of a movie\nExample: Director OF \"Ratatouille\"\n\n")
@@ -171,7 +163,7 @@ if __name__ == "__main__":
 
         # Perform query
         # Check if and is in query
-        if "and" in tokenized and len(tokenized) > 3:
+        if "and" in tokenized:
 
             # Find the index of 'and'
             and_index = tokenized.index('and')
@@ -197,9 +189,6 @@ if __name__ == "__main__":
             elif(result1 == [] and result2 == []):
                 print(f"\"{list_before_and[2]}\" not found with keyword: {list_before_and[0]} and {list_after_and[2]}\" not found with keyword: {list_after_and[0]}")
 
-            elif(result1 == None or result2 == None):
-                continue
-
             else:
                 # Find intersection
                 result = [item for item in result1 if item in result2]
@@ -223,6 +212,35 @@ if __name__ == "__main__":
                     for r in result:
 
                         print(r)
+
+        elif "or" in tokenized:
+            # Find the index of 'or'
+            and_index = tokenized.index('or')
+
+            # Split the list into before and after
+            list_before_or = tokenized[:and_index]
+            list_after_or = tokenized[and_index+1:]
+
+            # Call 2 seperate functions for each side of 'of'
+            result1 = find_query(list_before_or, firebase_connect)
+            result2 = find_query(list_after_or, firebase_connect)
+
+            # Find union
+            result = list(result1.symmetric_difference(result2))
+
+            if(result == None):
+                continue
+
+            elif(len(result) == 0):
+
+                print(f"\"{tokenized[2]}\" not found with keyword: {tokenized[0]}")
+            
+            else:
+
+                # Print Results
+                for r in result:
+
+                    print(r)
 
         else:
             
