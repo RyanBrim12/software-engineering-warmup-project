@@ -1,10 +1,10 @@
-import firebase_admin
-from firebase_admin import credentials
-from firebase_admin import firestore
+from firebase_admin import credentials, firestore, initialize_app
 from google.cloud.firestore_v1.base_query import FieldFilter
+
 
 class Movie:
     """Class that describes a movie."""
+
     def __init__(self, title, year, rating,
                  director, writer, duration, genre) -> None:
         """Initializes the instance based on given data."""
@@ -16,7 +16,6 @@ class Movie:
         self.duration = duration
         self.genre = genre
 
-    
     @staticmethod
     def from_dict(movie_dict):
         """Creates a Movie object with the data in the given dict."""
@@ -25,9 +24,10 @@ class Movie:
                      movie_dict["writer"], movie_dict["duration"],
                      movie_dict["genre"])
 
-
     def __eq__(self, value: object) -> bool:
-        """Returns whether the given object is equivalent to this Movie"""
+        """
+        Returns whether the given object is equivalent to this Movie.
+        """
         return (self.title == value.title
                 and self.year == value.year
                 and self.rating == value.rating
@@ -35,7 +35,6 @@ class Movie:
                 and self.writer == value.writer
                 and self.duration == value.duration
                 and self.genre == value.genre)
-
 
     def __repr__(self) -> str:
         """Returns str representation of the Movie"""
@@ -50,18 +49,21 @@ class FirebaseConnection:
     Class for maintaing a connection and performing
     operations on the documents within a firestore database.
     """
+
     def __init__(self, collection_name) -> None:
         """
         Initializes and saves a connection to 
         the firestore collection of the given name.
         """
         cred = credentials.Certificate("teamOneServiceAccountKey.json")
-        firebase_admin.initialize_app(cred)
-        self.client_connection = firestore.client().collection(collection_name)
-
+        initialize_app(cred)
+        client = firestore.client()
+        self.client_connection = client.collection(collection_name)
 
     def complete_query(self, field, operator, value) -> list[Movie]:
-        """Queries the firestore collection with the given parameters."""
+        """
+        Queries the firestore collection with the given parameters.
+        """
         collection = self.client_connection
         query = collection.where(filter=FieldFilter(field, operator, value))
         results = query.stream()
@@ -69,7 +71,6 @@ class FirebaseConnection:
         for m in results:
             movies.append(Movie.from_dict(m.to_dict()))
         return movies
-
 
     def delete_collection(self, batch_size):
         """Deletes all documents in the firestore collection."""
@@ -86,16 +87,17 @@ class FirebaseConnection:
         if deleted >= batch_size:
             return self.delete_collection(batch_size)
 
-
     def create_collection(self, movies: dict[str, Movie]):
-        """Adds a document for each Movie to the firestore collection."""
+        """
+        Adds a document for each Movie to the firestore collection.
+        """
         for id, m in movies.items():
             doc_ref = self.client_connection.document(id)
             doc_ref.set({"title": m.title, "year": m.year,
                          "rating": m.rating, "director": m.director,
                          "writer": m.writer, "duration": m.duration,
                          "genre": m.genre})
-            
+
 
 if __name__ == "__main__":
     fb = FirebaseConnection("movies")
