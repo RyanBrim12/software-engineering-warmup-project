@@ -171,7 +171,7 @@ if __name__ == "__main__":
 
         # Perform query
         # Check if and is in query
-        if "and" in tokenized:
+        if "and" in tokenized and len(tokenized) > 3:
 
             # Find the index of 'and'
             and_index = tokenized.index('and')
@@ -198,7 +198,7 @@ if __name__ == "__main__":
                 print(f"\"{list_before_and[2]}\" not found with keyword: {list_before_and[0]} and {list_after_and[2]}\" not found with keyword: {list_after_and[0]}")
 
             elif(result1 == None or result2 == None):
-                print(f"\"{list_before_and[2]}\" not found with keyword: {list_before_and[0]} and {list_after_and[2]}\" not found with keyword: {list_after_and[0]}")
+                continue
 
             else:
                 # Find intersection
@@ -224,7 +224,6 @@ if __name__ == "__main__":
 
                         print(r)
 
-        
         else:
             
             result = None
