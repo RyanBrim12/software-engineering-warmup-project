@@ -27,7 +27,14 @@ class Movie:
 
 
     def __eq__(self, value: object) -> bool:
-        return self.title == value.title
+        """Returns whether the given object is equivalent to this Movie"""
+        return (self.title == value.title
+                and self.year == value.year
+                and self.rating == value.rating
+                and self.director == value.director
+                and self.writer == value.writer
+                and self.duration == value.duration
+                and self.genre == value.genre)
 
 
     def __repr__(self) -> str:
