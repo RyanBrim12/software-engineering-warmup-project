@@ -163,7 +163,7 @@ if __name__ == "__main__":
 
         # Perform query
         # Check if and is in query
-        if "and" in tokenized:
+        if "and" in tokenized and len(tokenized) > 3 and 'of' not in tokenized:
 
             # Find the index of 'and'
             and_index = tokenized.index('and')
