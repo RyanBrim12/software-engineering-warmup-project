@@ -98,6 +98,11 @@ def find_query(query, connect):
                     if (query[1] == ">" or query[1] == ">=" or  query[1] == "<" or  query[1] == "<=" or query[1] == "=="):
 
                         query_search = connect.complete_query(query[0], query[1], float (query[2]))
+
+                        if query_search == []:
+                            print(f"\"{query[0]} {query[1]} {query[2]} \" no results found")
+                            query_result = None
+
                         for i in query_search:
                             query_result.append(i.title)
                         
@@ -114,8 +119,17 @@ def find_query(query, connect):
                 else:
                     if (query[1] == "=="):
                         query_search = connect.complete_query(query[0], query[1], query[2].title())
+
+                        if query_search == []:
+                            print(f"\"{query[0]} {query[1]} {query[2]} \" no results found")
+                            query_result = None
+
                         if(query[0] == "title"):
-                            query_result = query_search
+                            if query_search == []:
+                                print(f"\"{query[0]} {query[1]} {query[2]} \" no results found")
+                                query_result = None
+                            else:
+                                query_result = query_search
                         else:
                             for i in query_search:
                                 query_result.append(i.title)
@@ -227,6 +241,9 @@ if __name__ == "__main__":
                     for r in result:
 
                         print(f"{r}\n")
+        elif "and" in tokenized and 'title' in tokenized:
+
+            print("Title cannot be used with \"AND\"")
 
         else:
             
