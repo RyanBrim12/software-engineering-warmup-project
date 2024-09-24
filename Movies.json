@@ -2,7 +2,7 @@
   {
     "id": 35,
     "title": "Ratatouille",
-    "release": 2007,
+    "year": 2007,
     "rating": 8.6,
     "director": "Brad Bird",
     "writer": "Brad Bird",
@@ -12,7 +12,7 @@
   {
     "id": 59,
     "title": "Pulp Fiction",
-    "release": 1994,
+    "year": 1994,
     "rating": 8.9,
     "director": "Quentin Tarantino",
     "writer": "Quentin Tarantino",
@@ -22,7 +22,7 @@
   {
     "id": 5478,
     "title": "Tenet",
-    "release": 2020,
+    "year": 2020,
     "rating": 7.4,
     "director": "Christopher Nolan",
     "writer": "Christopher Nolan",
@@ -32,7 +32,7 @@
   {
     "id": 275,
     "title": "Oppenheimer",
-    "release": 2023,
+    "year": 2023,
     "rating": 8.5,
     "director": "Christopher Nolan",
     "writer": "Christopher Nolan",
@@ -42,7 +42,7 @@
   {
     "id": 3529,
     "title": "Inception",
-    "release": 2010,
+    "year": 2010,
     "rating": 8.8,
     "director": "Christopher Nolan",
     "writer": "Christopher Nolan",
@@ -52,7 +52,7 @@
   {
     "id": 3650,
     "title": "Interstellar",
-    "release": 2014,
+    "year": 2014,
     "rating": 8.8,
     "director": "Christopher Nolan",
     "writer": "Jonathan Nolan",
@@ -62,7 +62,7 @@
   {
     "id": 5577,
     "title": "Kill Bill: Vol. 1",
-    "release": 2003,
+    "year": 2003,
     "rating": 8.8,
     "director": "Quentin Tarantino",
     "writer": "Quentin Tarantino",
@@ -72,7 +72,7 @@
   {
     "id": 1567,
     "title": "Django Unchained",
-    "release": 2012,
+    "year": 2012,
     "rating": 8.6,
     "director": "Quentin Tarantino",
     "writer": "Quentin Tarantino",
@@ -82,7 +82,7 @@
   {
     "id": 1588,
     "title": "Reservoir Dogs",
-    "release": 1992,
+    "year": 1992,
     "rating": 8.6,
     "director": "Quentin Tarantino",
     "writer": "Quentin Tarantino",
@@ -92,7 +92,7 @@
   {
     "id": 175,
     "title": "Goodfellas",
-    "release": 1990,
+    "year": 1990,
     "rating": 8.7,
     "director": "Martin Scorsese",
     "writer": "Nicholas Pileggi",
@@ -102,7 +102,7 @@
   {
     "id": 7908,
     "title": "Shutter Island",
-    "release": 2010,
+    "year": 2010,
     "rating": 8.7,
     "director": "Martin Scorsese",
     "writer": "Laeta Kalogridis",
@@ -112,7 +112,7 @@
   {
     "id": 308,
     "title": "Killers of the Flower Moon",
-    "release": 2023,
+    "year": 2023,
     "rating": 7.6,
     "director": "Martin Scorsese",
     "writer": "Eric Roth",
@@ -122,7 +122,7 @@
   {
     "id": 235,
     "title": "Saving Private Ryan",
-    "release": 1998,
+    "year": 1998,
     "rating": 8.8,
     "director": "Steven Spielberg",
     "writer": "Robert Rodat",
@@ -132,7 +132,7 @@
   {
     "id": 5982,
     "title": "Jurassic Park",
-    "release": 1993,
+    "year": 1993,
     "rating": 8.8,
     "director": "Steven Spielberg",
     "writer": "Michael Crichton",
@@ -142,7 +142,7 @@
   {
     "id": 484,
     "title": "Jaws",
-    "release": 1975,
+    "year": 1975,
     "rating": 8.5,
     "director": "Steven Spielberg",
     "writer": "Peter Benchley",
@@ -152,7 +152,7 @@
   {
     "id": 7012,
     "title": "Indiana Jones and the Kingdom of the Crystal Skull",
-    "release": 2008,
+    "year": 2008,
     "rating": 5.8,
     "director": "Steven Spielberg",
     "writer": "David Koepp",
@@ -162,7 +162,7 @@
   {
     "id": 2238,
     "title": "Full Metal Jacket",
-    "release": 1987,
+    "year": 1987,
     "rating": 7.4,
     "director": "Stanley Kubrick",
     "writer": "Stanley Kubrick",
@@ -172,7 +172,7 @@
   {
     "id": 2506,
     "title": "A Clockwork Orange",
-    "release": 1971,
+    "year": 1971,
     "rating": 7.3,
     "director": "Stanley Kubrick",
     "writer": "Stanley Kubrick",
@@ -182,7 +182,7 @@
   {
     "id": 5466,
     "title": "Eyes Wide Shut",
-    "release": 1999,
+    "year": 1999,
     "rating": 5.9,
     "director": "Stanley Kubrick",
     "writer": "Stanley Kubrick",
@@ -192,7 +192,7 @@
   {
     "id": 3019,
     "title": "Bobby Fischer Against the World",
-    "release": 2011,
+    "year": 2011,
     "rating": 8.5,
     "director": "Liz Garbus",
     "writer": "",
@@ -202,7 +202,7 @@
   {
     "id": 177,
     "title": "The Look of Silence",
-    "release": 2015,
+    "year": 2015,
     "rating": 8.3,
     "director": "Joshua Oppenheimer",
     "writer": "",
@@ -212,7 +212,7 @@
   {
     "id": 432,
     "title": "Apollo 11",
-    "release": 2019,
+    "year": 2019,
     "rating": 8.1,
     "director": "Todd Douglas Miller",
     "writer": "",
@@ -222,7 +222,7 @@
   {
     "id": 7776,
     "title": "Biggie and Tupac",
-    "release": 2002,
+    "year": 2002,
     "rating": 7.3,
     "director": "Nick Broomfield",
     "writer": "",
@@ -232,7 +232,7 @@
   {
     "id": 9735,
     "title": "Katy Perry: Part of Me",
-    "release": 2012,
+    "year": 2012,
     "rating": 7.3,
     "director": "Dan Cutforth",
     "writer": "",
@@ -242,7 +242,7 @@
   {
     "id": 6805,
     "title": "Mickey: The Story of a Mouse",
-    "release": 2022,
+    "year": 2022,
     "rating": 7,
     "director": "Jeff Malmberg",
     "writer": "",
@@ -252,7 +252,7 @@
   {
     "id": 9079,
     "title": "Cocaine Cowboys",
-    "release": 2006,
+    "year": 2006,
     "rating": 6.8,
     "director": "Billy Corben",
     "writer": "",
@@ -262,7 +262,7 @@
   {
     "id": 1231,
     "title": "Taylor Swift: The Eras Tour",
-    "release": 2023,
+    "year": 2023,
     "rating": 6.6,
     "director": "Sam Wrench",
     "writer": "",
@@ -272,7 +272,7 @@
   {
     "id": 3972,
     "title": "Bill Nye: Science Guy",
-    "release": 2017,
+    "year": 2017,
     "rating": 6.6,
     "director": "David Alvarado",
     "writer": "",
@@ -282,7 +282,7 @@
   {
     "id": 2305,
     "title": "Roadrunner: A Film About Anthony Bourdain",
-    "release": 2021,
+    "year": 2021,
     "rating": 6.3,
     "director": "Morgan Neville",
     "writer": "",
@@ -292,7 +292,7 @@
   {
     "id": 5793,
     "title": "Miracle",
-    "release": 2004,
+    "year": 2004,
     "rating": 7.6,
     "director": "Gavin O'Connor",
     "writer": "Eric Guggenheim",
@@ -302,7 +302,7 @@
   {
     "id": 4667,
     "title": "22 Jump Street",
-    "release": 2014,
+    "year": 2014,
     "rating": 8,
     "director": "Phil Lord",
     "writer": "Michael Bacall",
@@ -312,7 +312,7 @@
   {
     "id": 5543,
     "title": "21 Jump Street",
-    "release": 2012,
+    "year": 2012,
     "rating": 7.9,
     "director": "Phil Lord",
     "writer": "Michael Bacall",
