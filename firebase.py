@@ -38,6 +38,7 @@ class Movie:
 
 
     def __repr__(self) -> str:
+        """Returns str representation of the Movie"""
         return (f"Title: {self.title}\nYear: {self.year}\n"
                 f"Rating: {self.rating}\nDirector: {self.director}\n"
                 f"Writer: {self.writer}\nDuration: {self.duration}\n"
@@ -45,13 +46,22 @@ class Movie:
 
 
 class FirebaseConnection:
+    """
+    Class for maintaing a connection and performing
+    operations on the documents within a firestore database.
+    """
     def __init__(self, collection_name) -> None:
+        """
+        Initializes and saves a connection to 
+        the firestore collection of the given name.
+        """
         cred = credentials.Certificate("teamOneServiceAccountKey.json")
         firebase_admin.initialize_app(cred)
         self.client_connection = firestore.client().collection(collection_name)
 
 
     def complete_query(self, field, operator, value) -> list[Movie]:
+        """Queries the firestore collection with the given parameters."""
         collection = self.client_connection
         query = collection.where(filter=FieldFilter(field, operator, value))
         results = query.stream()
@@ -62,6 +72,7 @@ class FirebaseConnection:
 
 
     def delete_collection(self, batch_size):
+        """Deletes all documents in the firestore collection."""
         if batch_size == 0:
             return
 
@@ -77,6 +88,7 @@ class FirebaseConnection:
 
 
     def create_collection(self, movies: dict[str, Movie]):
+        """Adds a document for each Movie to the firestore collection."""
         for id, m in movies.items():
             doc_ref = self.client_connection.document(id)
             doc_ref.set({"title": m.title, "year": m.year,
