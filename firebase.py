@@ -4,8 +4,21 @@ from firebase_admin import firestore
 from google.cloud.firestore_v1.base_query import FieldFilter
 
 class Movie:
+    """Class that describes a movie."""
     def __init__(self, title, release, rating,
                  director, writer, duration, genre) -> None:
+        """
+        Initializes the instance based on given data.
+
+        Args:
+            title (str): The title of the movie.
+            release (int): The year the movie was released.
+            rating (float): The decimal rating of the movie; between 0 and 10.
+            director (str): The director of the movie.
+            writer (str): The writer of the movie.
+            duration (int): The duration of the movie in minutes.
+            genre (str): The genre of the movie.
+        """
         self.title = title
         self.release = release
         self.rating = rating
@@ -16,10 +29,21 @@ class Movie:
 
     
     @staticmethod
-    def from_dict(dict):
-        return Movie(dict["title"], dict["release"], dict["rating"],
-                     dict["director"], dict["writer"], dict["duration"],
-                     dict["genre"])
+    def from_dict(movie_dict):
+        """
+        Creates a Movie object with the data in the given dict.
+
+        Args:
+            movie_dict (dict[str]])
+        """
+        return Movie(movie_dict["title"], movie_dict["release"],
+                     movie_dict["rating"], movie_dict["director"],
+                     movie_dict["writer"], movie_dict["duration"],
+                     movie_dict["genre"])
+
+
+    def __eq__(self, value: object) -> bool:
+        return self.title == value.title
 
 
     def __repr__(self) -> str:
