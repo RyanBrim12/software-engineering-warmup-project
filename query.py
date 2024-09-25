@@ -115,7 +115,7 @@ def find_query(query, connect):
                         query_search = connect.complete_query(query[0], query[1], float (query[2]))
 
                         if query_search == []:
-                            print(f"\"No Results Found For: {query[0]} {query[1]} {query[2]} \"\nTry again or type Help for examples\n ")
+                            print(f"\"No Results Found For: {query[0]} {query[1]} {query[2]}\"\nTry again or type Help for examples\n ")
                             query_result = None
 
                         for i in query_search:
