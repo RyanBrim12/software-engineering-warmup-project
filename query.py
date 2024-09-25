@@ -107,7 +107,7 @@ def find_query(query, connect):
                         elif query[0] == "writer":
                             query_result.append(query_check[0].writer)
                             if query_result == [""]:
-                                print(f'"{query[0]}" of {query[2].title()} '
+                                print(f'"{query[0]}" of "{query[2].title()}", '
                                        'unknown')
                         elif query[0] == "genre":
                             query_result.append(query_check[0].genre)
