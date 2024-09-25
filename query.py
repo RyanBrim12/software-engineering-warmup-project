@@ -192,6 +192,7 @@ def find_query(query, connect):
         string = ""
         for i in query:
             string+=i
+            string+=" "
         print(f"Query input: \"{string}\" of wrong size! Try again "
               "or type Help for examples\n\n")
         query_result = None
