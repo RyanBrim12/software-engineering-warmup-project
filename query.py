@@ -132,7 +132,7 @@ def find_query(query, connect):
                         or query[1] == "=="):
 
 
-                        if(query[2].isdigit()):
+                        try:
 
                             query_search = connect.complete_query(query[0],
                                                               query[1],
@@ -146,7 +146,7 @@ def find_query(query, connect):
 
                             for i in query_search:
                                 query_result.append(i.title)
-                        else:
+                        except:
                             print(f'No Results Found For: \"{query[0]} '
                                     f'{query[1]} {query[2]}\"\n\"{query[2]}\"'
                                     ' not an integer \nTry again '
